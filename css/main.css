@@ -660,6 +660,9 @@ figure.highlight .code pre {
   padding-left: 10px;
   width: 100%;
 }
+figure.highlight .marked {
+  background: rgba(0,0,0,0.3);
+}
 pre .caption,
 pre figcaption {
   margin-bottom: 10px;
@@ -1073,6 +1076,7 @@ pre code {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs,
@@ -1261,7 +1265,7 @@ pre code {
     display: none;
   }
 }
-.header {
+header.header {
   background: transparent;
 }
 .header-inner {
@@ -1283,7 +1287,7 @@ pre code {
   flex-shrink: 0;
   padding: 0 10px;
 }
-.use-motion .header,
+.use-motion header.header,
 .use-motion .site-brand-container .toggle {
   opacity: 0;
 }
@@ -2080,7 +2084,7 @@ pre code {
   font-size: 0.875em;
   font-weight: bold;
   line-height: 1;
-  margin: -20px auto 15px;
+  margin: -15px auto 15px;
   text-align: center;
 }
 .post-body iframe,
@@ -2685,6 +2689,11 @@ ul.breadcrumb li:last-child {
 }
 @media (max-width: 767px) {
   .site-nav {
+    padding-top: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .main-menu {
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
   }
@@ -2781,7 +2790,7 @@ ul.breadcrumb li:last-child {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #ffcbff;
+  background: #e0c7ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
