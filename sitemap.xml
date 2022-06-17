@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lyunki.github.io/2022/06/16/cron-study/</loc>
+    <loc>https://lyunki.github.io/2022/06/17/cron-study/</loc>
     
-    <lastmod>2022-06-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lyunki.github.io/2022/06/16/deploy-hexo/</loc>
-    
-    <lastmod>2022-06-16</lastmod>
+    <lastmod>2022-06-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lyunki.github.io/2022/06/16/git-tips/</loc>
+    <loc>https://lyunki.github.io/2022/06/17/deploy-hexo/</loc>
     
-    <lastmod>2022-06-16</lastmod>
+    <lastmod>2022-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lyunki.github.io/2022/06/17/git-tips/</loc>
+    
+    <lastmod>2022-06-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
   <url>
     <loc>https://lyunki.github.io/404.html</loc>
     
-    <lastmod>2022-06-16</lastmod>
+    <lastmod>2022-06-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,7 +40,7 @@
 
   <url>
     <loc>https://lyunki.github.io/</loc>
-    <lastmod>2022-06-16</lastmod>
+    <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
