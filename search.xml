@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Cron 表达式学习</title>
-    <url>/2022/06/17/cron-study/</url>
+    <url>/2022/06/21/cron-study/</url>
     <content><![CDATA[<p>之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下 <span id="more"></span></p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><table>
 <thead>
@@ -76,7 +76,7 @@
   </entry>
   <entry>
     <title>通过Github Actions部署你的Hexo博客</title>
-    <url>/2022/06/17/deploy-hexo/</url>
+    <url>/2022/06/21/deploy-hexo/</url>
     <content><![CDATA[<p>最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。<span id="more"></span></p>
 <h2 id="使用hexo-d进行部署"><a href="#使用hexo-d进行部署" class="headerlink" title="使用hexo d进行部署"></a>使用hexo d进行部署</h2><ol>
 <li><p>增加 <code>hexo-deployer-git</code> 依赖，在_config.yaml文件里配置 </p>
@@ -99,7 +99,7 @@
   </entry>
   <entry>
     <title>git 小知识记录</title>
-    <url>/2022/06/17/git-tips/</url>
+    <url>/2022/06/21/git-tips/</url>
     <content><![CDATA[<p>最近用 git 时遇到几次修改文件名大小写不生效的问题，很是恶心，突发奇想，用 blog 记录一下那些碰到的问题<span id="more"></span></p>
 <h2 id="在-git-中修改文件名大小写"><a href="#在-git-中修改文件名大小写" class="headerlink" title="在 git 中修改文件名大小写"></a>在 git 中修改文件名大小写</h2><ol>
 <li>如果是修改文件名，可以用 git mv</li>
@@ -116,5 +116,15 @@
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm --cached xxxx</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>powershell 学习</title>
+    <url>/2022/06/21/powershell-study/</url>
+    <content><![CDATA[<p>本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习 <span id="more"></span></p>
+<h2 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h2><p>首先在 powershell 执行 <code>Code $PROFILE</code> （Code 会全局的打开 VSCode 编辑器，可能需要配置环境变量，可自行选择文本编辑器）,然后保存文件，这样能够迅速的创建一个脚本，会在每次启动 powershell 时执行。</p>
+<h2 id="open-命令"><a href="#open-命令" class="headerlink" title="open 命令"></a>open 命令</h2><p>open . 在 omz 中能迅速的打开当前文件夹，这对我来说算是非常常用的一个命令，而在 powershell 中对应的命令是 ii, 因此可以实现一个 open 方法（对于有 Typescript 经验的开发人员来说，这实在太过熟悉。。。以至于我甚至没有阅读过任何 ps 脚本文档，只是仿照着其他脚本就实现了一个简单的 open 命令</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">open</span><span class="params">([string]<span class="variable">$path</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">ii</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="todo…"><a href="#todo…" class="headerlink" title="todo…"></a>todo…</h2>]]></content>
   </entry>
 </search>

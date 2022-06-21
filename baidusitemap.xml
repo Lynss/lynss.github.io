@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lyunki.github.io/2022/06/17/cron-study/</loc>
-    <lastmod>2022-06-17</lastmod>
+    <loc>https://lyunki.github.io/2022/06/21/cron-study/</loc>
+    <lastmod>2022-06-21</lastmod>
   </url>
   <url>
-    <loc>https://lyunki.github.io/2022/06/17/deploy-hexo/</loc>
-    <lastmod>2022-06-17</lastmod>
+    <loc>https://lyunki.github.io/2022/06/21/deploy-hexo/</loc>
+    <lastmod>2022-06-21</lastmod>
   </url>
   <url>
-    <loc>https://lyunki.github.io/2022/06/17/git-tips/</loc>
-    <lastmod>2022-06-17</lastmod>
+    <loc>https://lyunki.github.io/2022/06/21/git-tips/</loc>
+    <lastmod>2022-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://lyunki.github.io/2022/06/21/powershell-study/</loc>
+    <lastmod>2022-06-21</lastmod>
   </url>
 </urlset> 
