@@ -23,28 +23,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="找个地方背一下单词">
+    <meta name="description" content="最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每天英语学习">
-<meta property="og:url" content="https://lyunki.github.io/2022/09/01/daily-English/index.html">
+<meta property="og:title" content="通过Github Actions部署你的Hexo博客">
+<meta property="og:url" content="https://lyunki.github.io/2022/09/02/deploy-hexo/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="找个地方背一下单词">
+<meta property="og:description" content="最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-01T02:54:25.478Z">
-<meta property="article:modified_time" content="2022-09-01T02:54:25.478Z">
+<meta property="article:published_time" content="2022-09-02T02:50:10.685Z">
+<meta property="article:modified_time" content="2022-09-02T02:50:10.685Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2022/09/01/daily-English/">
+<link rel="canonical" href="https://lyunki.github.io/2022/09/02/deploy-hexo/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/09/01/daily-English/","path":"2022/09/01/daily-English/","title":"每天英语学习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/09/02/deploy-hexo/","path":"2022/09/02/deploy-hexo/","title":"通过Github Actions部署你的Hexo博客"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>每天英语学习 | Quoth the Raven</title>
+<title>通过Github Actions部署你的Hexo博客 | Quoth the Raven</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2022-x2F-08-x2F-23"><span class="nav-number">1.</span> <span class="nav-text">2022&#x2F;08&#x2F;23</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2022-x2F-08-x2F-24"><span class="nav-number">2.</span> <span class="nav-text">2022&#x2F;08&#x2F;24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2022-x2F-08-x2F-30"><span class="nav-number">3.</span> <span class="nav-text">2022&#x2F;08&#x2F;30</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2022-x2F-08-x2F-31"><span class="nav-number">4.</span> <span class="nav-text">2022&#x2F;08&#x2F;31</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2022-x2F-09-x2F-01"><span class="nav-number">5.</span> <span class="nav-text">2022&#x2F;09&#x2F;01</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo-d%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text">使用hexo d进行部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8github-action%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">使用github action进行部署</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/09/01/daily-English/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/09/02/deploy-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="每天英语学习 | Quoth the Raven">
+      <meta itemprop="name" content="通过Github Actions部署你的Hexo博客 | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          每天英语学习
+          通过Github Actions部署你的Hexo博客
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +253,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-09-01 02:54:25" itemprop="dateCreated datePublished" datetime="2022-09-01T02:54:25+00:00">2022-09-01</time>
+      <time title="创建时间：2022-09-02 02:50:10" itemprop="dateCreated datePublished" datetime="2022-09-02T02:50:10+00:00">2022-09-02</time>
     </span>
 
   
@@ -272,8 +272,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="每天英语学习" href="/2022/09/01/daily-English/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::50ec469377fb74b1b4b128316c447d89" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="通过Github Actions部署你的Hexo博客" href="/2022/09/02/deploy-hexo/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::84998d58456fa3adbfd999ab3d3800e7" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,14 +284,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.4k</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -302,12 +302,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>找个地方背一下单词 <span id="more"></span></p>
-<h2 id="2022-x2F-08-x2F-23"><a href="#2022-x2F-08-x2F-23" class="headerlink" title="2022&#x2F;08&#x2F;23"></a>2022&#x2F;08&#x2F;23</h2><p>portrait: a family portrait<br>fisherman: The water came up to the fisherman’s thights.<br>contract: a research contract<br>subtract: Subtract four from nine and you have five.<br>fireman: I saw a fireman racing to the fire.<br>truck: coal truck<br>trail: trailing plants.<br>postman: He looked like a postman but he was really a fake.<br>manly: a deep manly voice<br>attract: Leftover food attracts flies.<br>abstract: He is an abstract painter.<br>trace: traces of poison.<br>track: tyre tracks.<br>gentleman: He’s no gentleman.<br>policeman: A policeman has been shot dead in an ambush.<br>mankind: the history of mankind.<br>salesman: That salesman is a real crook.<br>statesman: a respected elder statesman.<br>seaman: a merchant seaman<br>tractor: He learnt tractor maintenance.<br>distract: a distracting noise.<br>spokesman: a White House spokesman.<br>extract: yeast extract<br>trigger: nuclear triggers.<br>tradesman: This is a job for skilled tradesman.<br>deposit: to pay a deposit.<br>preposition: The word is compounded of a preposition and a verb.<br>parcel: She parcelled up the photos.<br>ingenuity: You see the ingenuity of the phrasing<br>pertinent: a pertinent question.<br>generosity: acts of generosity.<br>detain: a man has been detained for questioning.</p>
-<h2 id="2022-x2F-08-x2F-24"><a href="#2022-x2F-08-x2F-24" class="headerlink" title="2022&#x2F;08&#x2F;24"></a>2022&#x2F;08&#x2F;24</h2><p>elect: the persident elect<br>handy: a handy little tool.<br>colleague: a colleague of mine from the office<br>handsome: a handsome fee<br>college: college compuses<br>diligent: a diligent student<br>collect:<br>handwriting: I can’t read his handwriting<br>neglect: a neglected garden<br>election: to vote in an election<br>handkerchief: He took out a handkerchief and blew his noise.<br>intelligence: intelligence reports<br>handful: a handful of rice<br>intelligent: an intelligent question<br>handle: a broom handle<br>shorthand: a shorthand typist<br>intellect: a man of considerable intellect<br>handicap: mental handicap<br>beforehand: I wish we’d known about it beforehand.<br>negligible: a negligible amount<br>handbook: None of them has got a handboox to tourists.<br>eligant: an eligant dress<br>handout: a cash handout<br>second-hand: a second-hand computer<br>sustain: a sustain attack</p>
-<h2 id="2022-x2F-08-x2F-30"><a href="#2022-x2F-08-x2F-30" class="headerlink" title="2022&#x2F;08&#x2F;30"></a>2022&#x2F;08&#x2F;30</h2><p>sound: the sounds of children playing<br>contain: The 77,000-acre estate contains five of the highest peaks in Scotland<br>domestic: sales in the domestic market<br>Putin’s <code>chief</code> of security<br>The planet is probably in <code>orbit</code> around a small star.<br>Note how smooth the skin of the upper arm is,then <code>compare</code> it to the skin on the elbow.<br>I don’t like the <code>flavor</code> of onion.<br>The area has its own <code>unique</code> language, Catalan.<br>vanilla ice cream with chocolate <code>sauce</code>.<br>The pilots had to take emergency action to <code>avoid</code> a disaster.<br>This is well illustrated in the <code>mythologies</code> of many countries.<br>Anita pushed her <code>plate</code> away; she had eaten virtually nothing.<br>Her marvelous performance won her <code>plaudits</code> from the judegs.<br>He had <code>urgent</code> business in New York.<br>I had to take the <code>herb</code> tea although it’s bitter.<br>freshly ground black <code>pepper</code>.<br>Launch was a <code>snack</code> in the fields.<br>their physical <code>characteristics</code>.<br>Our sniper teams <code>observed</code> theme manning an anti-aircraft gun.<br>The historic building is as much part of our <code>heritage</code> as the paintings.<br>The most valuable <code>item</code> on show will be a Picasso drawing.<br>It’s plain that he adores his daughter, and the feeling is <code>mutual</code>.<br>…<code>ethnic</code> tensions.<br>Oxygen and hydrogen <code>combine</code> to form water.<br>Garnish with <code>mint</code> sprigs.<br>The dogs were leaping and growling at the full stretch of their <code>chains</code>.<br>…the <code>combination</code> of science and art<br>I’d dropped a <code>hint</code> about havingd an exhibition of his work up here.<br>…her <code>debut</code> album ‘Sugar Time’<br>The term ‘special needs’ covers a wide <code>spectrum</code> of problems.<br>…the last <code>decade</code> of the nineteenth century.<br>…a <code>veh.icle</code> which was somewhere between a tractor and a truck.<br>These plants have a tendency to grow in the more <code>rural</code> areas.<br>…a stair way in the <code>rear</code> of the building.<br>All these brightly coloured <code>hybrid</code> are so lovely in the garden.<br>This provided a pretext for the <code>author.ities</code> to cancel the elections.<br>a light <code>switch</code><br>Have you got your own <code>transport</code>?<br>The tiny rocket is attached to the pacecraft and is designed to <code>pro.pel</code> it toward Mars.<br>He used a <code>harmmer</code> and chisel to chip away at the wall.<br>A <code>proportion</code> of the rent is met by the city council.<br>There are calls for his resignation, but there is no sign yet that he will <code>com.ply</code><br>…his constant desire to <code>innovate</code> and experiment.<br>The <code>apportionment</code> of government budget is very complicated.</p>
-<h2 id="2022-x2F-08-x2F-31"><a href="#2022-x2F-08-x2F-31" class="headerlink" title="2022&#x2F;08&#x2F;31"></a>2022&#x2F;08&#x2F;31</h2><p>He eventually rose to the <code>rank</code> of captain.<br>Everything had been stitched by Molly’s <code>nimble</code> fingers.<br>It was George who first <code>proposed</code> that we dry clothes in that locker.<br>Jenny’s writing a film <code>script</code>.<br>…a great <code>deal</code> of money.<br>…traditional French cuisine.<br>I packed and said goodbye to Charlie.<br><code>Exprosure</code> to lead is known to damage the brains of young children.<br>…a pudding <code>basin</code>.<br>He was not interested in a <code>romantic</code> relationship with Ingrid.<br>They’ll spend some time <code>floating</code> boats in the creek.<br>…the snipers and artillerymen in the <code>surrounding</code> hills.<br>His picture was <code>superimposed</code> on a muscular body.<br>The signals are sent by <code>satelltie</code> link.<br>Peel away the <code>sticky</code> paper.<br>…the Persident’s Council, which <code>ensure</code> the supermacy of the National Party.<br>The <code>observatory</code> is mostly located on a mountaintop.<br>He gave a great performance, but he was very <code>humble</code>.<br>…people with <code>inherited</code> wealth.<br>The show is very amusing and the <code>cast</code> are very good.<br>He peered at the <code>label</code> on the bottle.<br>…bottles of hair <code>dye</code>.<br>…an international agreement aimed at halting the <code>destrutction</code> of the ozone layer.<br>His threats become more <code>intense</code>, agitated and frequent.<br>People can feel the <code>vibration</code> hundreds of miles from the centre of the earthquake.<br>They watched the dodgem cars bang and <code>bounce</code>.<br>The country’s economic problems are largely <code>due</code> to the weakness of the recovery.<br>We now have a Europe without <code>internal</code> borders.<br>U.K. companies face a <code>stark</code> choice if they want to stay competitive.<br>Silk was used with wool for <code>contrast</code>.</p>
-<h2 id="2022-x2F-09-x2F-01"><a href="#2022-x2F-09-x2F-01" class="headerlink" title="2022&#x2F;09&#x2F;01"></a>2022&#x2F;09&#x2F;01</h2><p>Many of these problems can be <code>minimized</code> by sensitive planning.<br><code>Spning</code> is a basic skill of ancient Chinese woman.<br>The missiles missed their <code>target</code>.<br>He pleaded not guilty to murdering his <code>former</code> wife.<br>…a <code>curve</code> in the road.<br>The volcano spewed a <code>fountain</code> of molten rock 650 feet in the air.<br>He stood on the <code>podium</code> and the audience burst into applause.<br>I <code>grabbed</code> him by the neck.<br>Cataract operations are a <code>triumph</code> of modern surgy, with a success rate of more than 90 percent.<br>…a <code>bronze</code> statue of Giorgi Dimitrov.<br>A courier was despatched with two <code>sealed</code> envelopes.<br>The famous athlete won his second gold <code>medal</code> in the Olympics Games.</p>
+        <p>最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。<span id="more"></span></p>
+<h2 id="使用hexo-d进行部署"><a href="#使用hexo-d进行部署" class="headerlink" title="使用hexo d进行部署"></a>使用hexo d进行部署</h2><ol>
+<li><p>增加 <code>hexo-deployer-git</code> 依赖，在_config.yaml文件里配置 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  - type: git #提交类型git</span><br><span class="line">    repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增加部署命令：<code> &quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo g -d&quot;</code>,执行 <code>npm run deploy</code>,然后打开你的github page即可看到你的博客啦。</p>
+</li>
+</ol>
+<p>这些其实官网中都有相关的介绍了，但是有个问题，打开你的github仓库能够看到，仓库中的代码实际上是编译后的静态js html css文件，这就导致你需要一个单独的仓库去管理你的源码。</p>
+<h2 id="使用github-action进行部署"><a href="#使用github-action进行部署" class="headerlink" title="使用github action进行部署"></a>使用github action进行部署</h2><p>虽然其实严格来说上述的步骤也不麻烦，只是需要每次执行push前做一次npm run deploy，但是在阅读文档时，看到介绍，可以采用github action来做部署，因此果断尝试一下</p>
+<ol>
+<li>执行 <code>ssh-keygen -t rsa -C &quot;email&quot;</code>,不要默认命名，输入类似  xxx_blog_deploy  的名字方便你后续找到对应的 ssh key</li>
+<li>在你的github page仓库的Settings&#x2F;Deploy keys 增加xxx_blog_deploy.pub的内容，并注意要基于write access</li>
+<li>在你的blog source仓库的Settings&#x2F;Secrets 仓库增加xxx_blog_deploy 的内容</li>
+<li>在你的source的.github&#x2F;workflows 文件夹下增加 xxx.yml (我用的pnpm, npm的缓存方式可以参考<code>sma11black/hexo-action</code>示例)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  - push</span><br><span class="line">  - pull_request</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    name: A job to deploy hexo blog.</span><br><span class="line">    strategy:</span><br><span class="line">      matrix:</span><br><span class="line">        node: [ &#x27;12&#x27;, &#x27;14&#x27;, &#x27;16&#x27; ]</span><br><span class="line">    steps:</span><br><span class="line">    - name: Checkout</span><br><span class="line">      uses: actions/checkout@v2</span><br><span class="line">      with:</span><br><span class="line">        submodules: true # Checkout private submodules(themes or something else).</span><br><span class="line">    - name: Setup node</span><br><span class="line">      uses: actions/setup-node@v2</span><br><span class="line">      with:</span><br><span class="line">        node-version: $&#123;&#123; matrix.node &#125;&#125;</span><br><span class="line">    - name: Cache pnpm modules</span><br><span class="line">      uses: actions/cache@v2</span><br><span class="line">      with:</span><br><span class="line">        path: ~/.pnpm-store</span><br><span class="line">        key: $&#123;&#123; runner.os &#125;&#125;-$&#123;&#123; hashFiles(&#x27;**/pnpm-lock.yaml&#x27;) &#125;&#125;</span><br><span class="line">        restore-keys: |</span><br><span class="line">          $&#123;&#123; runner.os &#125;&#125;-</span><br><span class="line">    - uses: pnpm/action-setup@v2.0.1</span><br><span class="line">      with:</span><br><span class="line">        version: 6.0.2</span><br><span class="line">        run_install: true</span><br><span class="line">    </span><br><span class="line">    # Deploy hexo blog website.</span><br><span class="line">    - name: Deploy</span><br><span class="line">      id: deploy</span><br><span class="line">      uses: sma11black/hexo-action@v1.0.3</span><br><span class="line">      with:</span><br><span class="line">        deploy_key: $&#123;&#123; secrets.DEPLOY_KEY &#125;&#125;</span><br><span class="line">        user_name: xxx  # (or delete this input setting to use bot account)</span><br><span class="line">        user_email: xxx@xxx.com  # (or delete this input setting to use bot account)</span><br><span class="line">        commit_msg: $&#123;&#123; github.event.head_commit.message &#125;&#125;  # (or delete this input setting to use hexo default settings)</span><br><span class="line">    # Use the output from the `deploy` step(use for test action)</span><br><span class="line">    - name: Get the output</span><br><span class="line">      run: |</span><br><span class="line">        echo &quot;$&#123;&#123; steps.deploy.outputs.notify &#125;&#125;&quot;</span><br></pre></td></tr></table></figure></li>
+<li>每次git push后会自动触发github action 帮你生成静态文件，并且将静态文件推到 github page仓库了。</li>
+</ol>
+<p>希望这次是个好的开始，希望能坚持输出博客~</p>
 
     </div>
 
@@ -345,7 +357,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2022/09/01/daily-English/" title="每天英语学习">https://lyunki.github.io/2022/09/01/daily-English/</a>
+      <a href="https://lyunki.github.io/2022/09/02/deploy-hexo/" title="通过Github Actions部署你的Hexo博客">https://lyunki.github.io/2022/09/02/deploy-hexo/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -358,13 +370,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/09/01/deploy-hexo/" rel="prev" title="通过Github Actions部署你的Hexo博客">
-                  <i class="fa fa-chevron-left"></i> 通过Github Actions部署你的Hexo博客
+                <a href="/2022/09/02/frontend-performance/" rel="prev" title="前端性能量化">
+                  <i class="fa fa-chevron-left"></i> 前端性能量化
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/09/01/cron-study/" rel="next" title="Cron 表达式学习">
-                  Cron 表达式学习 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/09/02/daily-English/" rel="next" title="每天英语学习">
+                  每天英语学习 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -377,7 +389,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="50ec469377fb74b1b4b128316c447d89"></div>
+    <div class="comments" id="SOHUCS" sid="84998d58456fa3adbfd999ab3d3800e7"></div>
 </div>
   </main>
 
@@ -399,14 +411,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">12k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">11 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
