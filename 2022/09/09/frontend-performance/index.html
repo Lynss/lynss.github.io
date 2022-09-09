@@ -23,28 +23,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习">
+    <meta name="description" content="工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell 学习">
-<meta property="og:url" content="https://lyunki.github.io/2022/09/08/powershell-study/index.html">
+<meta property="og:title" content="前端性能量化">
+<meta property="og:url" content="https://lyunki.github.io/2022/09/09/frontend-performance/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习">
+<meta property="og:description" content="工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-08T03:14:04.548Z">
-<meta property="article:modified_time" content="2022-09-08T03:14:04.548Z">
+<meta property="article:published_time" content="2022-09-09T02:44:42.062Z">
+<meta property="article:modified_time" content="2022-09-09T02:44:42.066Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2022/09/08/powershell-study/">
+<link rel="canonical" href="https://lyunki.github.io/2022/09/09/frontend-performance/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/09/08/powershell-study/","path":"2022/09/08/powershell-study/","title":"powershell 学习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/09/09/frontend-performance/","path":"2022/09/09/frontend-performance/","title":"前端性能量化"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>powershell 学习 | Quoth the Raven</title>
+<title>前端性能量化 | Quoth the Raven</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prelude"><span class="nav-number">1.</span> <span class="nav-text">Prelude</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">open 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">3.1.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#performance-memory"><span class="nav-number">1.</span> <span class="nav-text">performance.memory</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/09/08/powershell-study/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/09/09/frontend-performance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="powershell 学习 | Quoth the Raven">
+      <meta itemprop="name" content="前端性能量化 | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          powershell 学习
+          前端性能量化
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +253,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-09-08 03:14:04" itemprop="dateCreated datePublished" datetime="2022-09-08T03:14:04+00:00">2022-09-08</time>
+      <time title="创建时间：2022-09-09 02:44:42" itemprop="dateCreated datePublished" datetime="2022-09-09T02:44:42+00:00">2022-09-09</time>
     </span>
 
   
@@ -272,8 +272,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="powershell 学习" href="/2022/09/08/powershell-study/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::2779b275e627b49a58214edf12dbaa84" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="前端性能量化" href="/2022/09/09/frontend-performance/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::7dc5de18feb7bdd33d0c94205e2a54ac" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,7 +284,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>339</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -302,16 +302,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习 <span id="more"></span></p>
-<h2 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h2><p>首先在 powershell 执行 <code>Code $PROFILE</code> （Code 会全局的打开 VSCode 编辑器，可能需要配置环境变量，可自行选择文本编辑器）,然后保存文件，这样能够迅速的创建一个脚本，会在每次启动 powershell 时执行。</p>
-<h2 id="open-命令"><a href="#open-命令" class="headerlink" title="open 命令"></a>open 命令</h2><p>open . 在 omz 中能迅速的打开当前文件夹，这对我来说算是非常常用的一个命令，而在 powershell 中对应的命令是 ii, 因此可以实现一个 open 方法（对于有 Typescript 经验的开发人员来说，这实在太过熟悉。。。以至于我甚至没有阅读过任何 ps 脚本文档，只是仿照着其他脚本就实现了一个简单的 open 命令</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">open</span><span class="params">([string]<span class="variable">$path</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">ii</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>读取和设置环境变量，这里直接在机器级别进行，方便后续账号切换后，配置依然生效。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getEnv</span><span class="params">([string]<span class="variable">$key</span>)</span></span> &#123;</span><br><span class="line">    [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;<span class="variable">$key</span>&quot;</span>, [<span class="type">EnvironmentVariableTarget</span>]::Machine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只添加不修改，方便回退</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setEnv</span><span class="params">([string]<span class="variable">$key</span>,[string]<span class="variable">$value</span>)</span></span> &#123;</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(</span><br><span class="line">        <span class="string">&quot;<span class="variable">$key</span>&quot;</span>,</span><br><span class="line">        [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;<span class="variable">$key</span>&quot;</span>, [<span class="type">EnvironmentVariableTarget</span>]::Machine) + <span class="string">&quot;;<span class="variable">$value</span>&quot;</span>,</span><br><span class="line">        [<span class="type">EnvironmentVariableTarget</span>]::Machine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 因为 set 的时候只做了添加，为了防止重复，这里清理重复的 path</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cleanPath</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="variable">$CurrentPath</span> = [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&#x27;Path&#x27;</span>,<span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line">    <span class="variable">$SplittedPath</span> = <span class="variable">$CurrentPath</span> <span class="operator">-split</span> <span class="string">&#x27;;&#x27;</span></span><br><span class="line">    <span class="variable">$CleanedPath</span> = <span class="variable">$SplittedPath</span> | <span class="built_in">Sort-Object</span> <span class="literal">-Unique</span></span><br><span class="line">    <span class="variable">$NewPath</span> = <span class="variable">$CleanedPath</span> <span class="operator">-join</span> <span class="string">&#x27;;&#x27;</span></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;Path&#x27;</span>, <span class="variable">$NewPath</span>,<span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;complete clean&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>powershell 本身提供了 remove-item 命令，这里做一个简单的映射到 rm 即可，虽然没有 -rf，但可以通过 -Recursive 和 -Force 来代替，并且即使没有传入 Flag ，也会有一个友好的交互提示如何进行下一步</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function rm([string]$path)&#123;</span><br><span class="line">    remove-item $path</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API <span id="more"></span></p>
+<h2 id="performance-memory"><a href="#performance-memory" class="headerlink" title="performance.memory"></a>performance.memory</h2><p>能够通过 performance.memory 获得以下数据 （都以字节计算</p>
+<ol>
+<li><code>usedJSHeapSize</code> : 当前 JS 堆活跃段（segment）的体积 The currently active segment of JS heap, in bytes.</li>
+<li><code>totalJSHeapSize</code> : 已分配的堆体积 The total allocated heap size, in bytes.</li>
+<li><code>jsHeapSizeLimit</code> : 上下文内可用堆的最大体积 The maximum size of the heap, in bytes, that is available to the context</li>
+</ol>
 
     </div>
 
@@ -349,7 +346,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2022/09/08/powershell-study/" title="powershell 学习">https://lyunki.github.io/2022/09/08/powershell-study/</a>
+      <a href="https://lyunki.github.io/2022/09/09/frontend-performance/" title="前端性能量化">https://lyunki.github.io/2022/09/09/frontend-performance/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -362,11 +359,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/09/08/cron-study/" rel="prev" title="Cron 表达式学习">
-                  <i class="fa fa-chevron-left"></i> Cron 表达式学习
-                </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/09/09/deploy-hexo/" rel="next" title="通过Github Actions部署你的Hexo博客">
+                  通过Github Actions部署你的Hexo博客 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -378,7 +375,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="2779b275e627b49a58214edf12dbaa84"></div>
+    <div class="comments" id="SOHUCS" sid="7dc5de18feb7bdd33d0c94205e2a54ac"></div>
 </div>
   </main>
 
@@ -400,14 +397,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">18k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">16 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
