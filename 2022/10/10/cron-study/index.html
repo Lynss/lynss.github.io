@@ -23,28 +23,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习">
+    <meta name="description" content="之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell 学习">
-<meta property="og:url" content="https://lyunki.github.io/2022/10/09/powershell-study/index.html">
+<meta property="og:title" content="Cron 表达式学习">
+<meta property="og:url" content="https://lyunki.github.io/2022/10/10/cron-study/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习">
+<meta property="og:description" content="之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-09T02:18:37.215Z">
-<meta property="article:modified_time" content="2022-10-09T02:18:37.215Z">
+<meta property="article:published_time" content="2022-10-10T02:18:56.733Z">
+<meta property="article:modified_time" content="2022-10-10T02:18:56.733Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2022/10/09/powershell-study/">
+<link rel="canonical" href="https://lyunki.github.io/2022/10/10/cron-study/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/10/09/powershell-study/","path":"2022/10/09/powershell-study/","title":"powershell 学习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/10/10/cron-study/","path":"2022/10/10/cron-study/","title":"Cron 表达式学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>powershell 学习 | Quoth the Raven</title>
+<title>Cron 表达式学习 | Quoth the Raven</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prelude"><span class="nav-number">1.</span> <span class="nav-text">Prelude</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">open 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">3.1.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C"><span class="nav-number">2.</span> <span class="nav-text">* 和 ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">需要注意的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E5%90%AB%E4%B9%89"><span class="nav-number">4.</span> <span class="nav-text">特殊字符含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-number">5.</span> <span class="nav-text">实战</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/10/09/powershell-study/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/10/10/cron-study/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="powershell 学习 | Quoth the Raven">
+      <meta itemprop="name" content="Cron 表达式学习 | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          powershell 学习
+          Cron 表达式学习
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +253,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-10-09 02:18:37" itemprop="dateCreated datePublished" datetime="2022-10-09T02:18:37+00:00">2022-10-09</time>
+      <time title="创建时间：2022-10-10 02:18:56" itemprop="dateCreated datePublished" datetime="2022-10-10T02:18:56+00:00">2022-10-10</time>
     </span>
 
   
@@ -272,8 +272,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="powershell 学习" href="/2022/10/09/powershell-study/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::257b5d03e722673706fa3672b8e5dac1" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="Cron 表达式学习" href="/2022/10/10/cron-study/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::11cf412b4a6a67771ab4935a529cc36a" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,7 +284,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -302,17 +302,76 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习 <span id="more"></span></p>
-<h2 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h2><p>首先在 powershell 执行 <code>Code $PROFILE</code> （Code 会全局的打开 VSCode 编辑器，可能需要配置环境变量，可自行选择文本编辑器）,然后保存文件，这样能够迅速的创建一个脚本，会在每次启动 powershell 时执行。</p>
-<h2 id="open-命令"><a href="#open-命令" class="headerlink" title="open 命令"></a>open 命令</h2><p>open . 在 omz 中能迅速的打开当前文件夹，这对我来说算是非常常用的一个命令，而在 powershell 中对应的命令是 ii, 因此可以实现一个 open 方法（对于有 Typescript 经验的开发人员来说，这实在太过熟悉。。。以至于我甚至没有阅读过任何 ps 脚本文档，只是仿照着其他脚本就实现了一个简单的 open 命令</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">open</span><span class="params">([string]<span class="variable">$path</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">ii</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>读取和设置环境变量，这里直接在机器级别进行，方便后续账号切换后，配置依然生效。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getEnv</span><span class="params">([string]<span class="variable">$key</span>)</span></span> &#123;</span><br><span class="line">    [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;<span class="variable">$key</span>&quot;</span>, [<span class="type">EnvironmentVariableTarget</span>]::Machine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只添加不修改，方便回退</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setEnv</span><span class="params">([string]<span class="variable">$key</span>,[string]<span class="variable">$value</span>)</span></span> &#123;</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(</span><br><span class="line">        <span class="string">&quot;<span class="variable">$key</span>&quot;</span>,</span><br><span class="line">        [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;<span class="variable">$key</span>&quot;</span>, [<span class="type">EnvironmentVariableTarget</span>]::Machine) + <span class="string">&quot;;<span class="variable">$value</span>&quot;</span>,</span><br><span class="line">        [<span class="type">EnvironmentVariableTarget</span>]::Machine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 因为 set 的时候只做了添加，为了防止重复，这里清理重复的 path</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cleanPath</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="variable">$CurrentPath</span> = [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&#x27;Path&#x27;</span>,<span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line">    <span class="variable">$SplittedPath</span> = <span class="variable">$CurrentPath</span> <span class="operator">-split</span> <span class="string">&#x27;;&#x27;</span></span><br><span class="line">    <span class="variable">$CleanedPath</span> = <span class="variable">$SplittedPath</span> | <span class="built_in">Sort-Object</span> <span class="literal">-Unique</span></span><br><span class="line">    <span class="variable">$NewPath</span> = <span class="variable">$CleanedPath</span> <span class="operator">-join</span> <span class="string">&#x27;;&#x27;</span></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;Path&#x27;</span>, <span class="variable">$NewPath</span>,<span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;complete clean&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>powershell 本身提供了 remove-item 命令，这里做一个简单的映射到 rm 即可，虽然没有 -rf，但可以通过 -Recursive 和 -Force 来代替，并且即使没有传入 Flag ，也会有一个友好的交互提示如何进行下一步</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function rm([string]$path)&#123;</span><br><span class="line">    remove-item $path</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <p>之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下 <span id="more"></span></p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Allowed Values</th>
+<th>Allowed Special Characters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Seconds</td>
+<td>Y</td>
+<td>0-59</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Minutes</td>
+<td>Y</td>
+<td>0-59</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Hours</td>
+<td>Y</td>
+<td>0-23</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Day of month</td>
+<td>Y</td>
+<td>1-31</td>
+<td>, - * ? &#x2F; L W</td>
+</tr>
+<tr>
+<td>Month</td>
+<td>Y</td>
+<td>0-11 or JAN-DEC</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Day of week</td>
+<td>Y</td>
+<td>1-7 or SUN-SAT</td>
+<td>, - * ? &#x2F; L #</td>
+</tr>
+<tr>
+<td>Year</td>
+<td>N</td>
+<td>empty or 1970-2099</td>
+<td>, - * &#x2F;</td>
+</tr>
+</tbody></table>
+<h2 id="和"><a href="#和" class="headerlink" title="* 和 ?"></a>* 和 ?</h2><p>这里值得一提的是 * 和 ? 的区别</p>
+<p>*: 很好理解，代表所有的，例如所有时刻的每一秒就是 <code>* * * * * ? </code> </p>
+<p>?: 代表不受控制的，只能由 Day of week 和 Day of month使用，因为二者是互斥的，例如：</p>
+<p>当你指定 Day of week 为周 1 时，对应的 Day of month 是 ?, 随意几号<br>当你指定 Day of month 为每月 1 号时，对应的Day of week 就需要为 ?, 随意周几</p>
+<h2 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h2><p>Day of week里 0代指的是周日</p>
+<h2 id="特殊字符含义"><a href="#特殊字符含义" class="headerlink" title="特殊字符含义"></a>特殊字符含义</h2><p>为了方便，都用数字来表示。</p>
+<ol>
+<li>,: 可以理解为一个数组， 例如 1,3,10 * * * * ? 代表每分钟的第 1 秒、第 3 秒、第 10 秒执行</li>
+<li>-: 表示连续的范围，可以理解为数组的简写 1-6 对应的数组完全体写法就是 1,2,3,4,5,6</li>
+<li>*: 匹配所有值，对于秒就是 0-59 ，对于月就是 0-11</li>
+<li>?: 无法控制的，也不需要在意的，例如当我在意的是每周1，我就无法在意或控制周一对应的是每月的1号</li>
+<li>&#x2F;: 表示step,例如在 Day of month 上 x&#x2F;y 完整形式可以写成x-31&#x2F;y (有的月份30天，有的31天，可能不一样。以此类推，如果是在秒上，就是 x-59&#x2F;y) ，表示的意思就是从 每月x号开始一直到31号，每隔y天执行一次</li>
+<li>L: 表示最后的,只能在 Day of month 和Day of week 上使用，在Day of month 上表示每月的最后一天（闰年的2月最后一天是28号），在 Day of week 上表示每周的最后一个天（周六）。但也可以带上数字，7L 表示每个月的最后一个周六 </li>
+<li>W: 表示月份离工作日（周一到周五）最接近的 Day of month。例如 1W，如果月份 1 号是周六，那么对应的就是 3 号，再例如 2W，如果月份 2 号是周六 ，则对应的是 1 号。</li>
+<li>#: y#x 只能用在 Day of week上，表示每月的第 x 个周 y (周7表示周六，周1表示周天)</li>
+</ol>
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 每年的母亲节早上7点</span><br><span class="line">0 0 7 ? 5 1#2</span><br><span class="line">// 每年的父亲节早上7点</span><br><span class="line">0 0 7 ? 6 1#3</span><br><span class="line">// 每年元旦的早上7点</span><br><span class="line">0 0 7 1 1 ?</span><br><span class="line">// 每周一早上9点半</span><br><span class="line">0 30 9 ? * 1</span><br><span class="line">// 每周五下午6点</span><br><span class="line">0 0 6 ? * 5</span><br><span class="line">// 每个月的最后一个非周末的下午6点</span><br><span class="line">0 0 6 ? * WL</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -349,7 +408,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2022/10/09/powershell-study/" title="powershell 学习">https://lyunki.github.io/2022/10/09/powershell-study/</a>
+      <a href="https://lyunki.github.io/2022/10/10/cron-study/" title="Cron 表达式学习">https://lyunki.github.io/2022/10/10/cron-study/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -362,14 +421,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/10/09/daily-English/" rel="prev" title="每天英语学习">
-                  <i class="fa fa-chevron-left"></i> 每天英语学习
+                <a href="/2022/10/10/deploy-hexo/" rel="prev" title="通过Github Actions部署你的Hexo博客">
+                  <i class="fa fa-chevron-left"></i> 通过Github Actions部署你的Hexo博客
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/10/09/git-tips/" rel="next" title="git 小知识记录">
-                  git 小知识记录 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -381,7 +437,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="257b5d03e722673706fa3672b8e5dac1"></div>
+    <div class="comments" id="SOHUCS" sid="11cf412b4a6a67771ab4935a529cc36a"></div>
 </div>
   </main>
 
