@@ -23,28 +23,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习">
+    <meta name="description" content="最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell 学习">
-<meta property="og:url" content="https://lyunki.github.io/2022/10/10/powershell-study/index.html">
+<meta property="og:title" content="通过Github Actions部署你的Hexo博客">
+<meta property="og:url" content="https://lyunki.github.io/2022/10/12/deploy-hexo/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习">
+<meta property="og:description" content="最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-10T02:19:01.035Z">
-<meta property="article:modified_time" content="2022-10-10T02:19:01.035Z">
+<meta property="article:published_time" content="2022-10-12T02:02:43.913Z">
+<meta property="article:modified_time" content="2022-10-12T02:02:43.913Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2022/10/10/powershell-study/">
+<link rel="canonical" href="https://lyunki.github.io/2022/10/12/deploy-hexo/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/10/10/powershell-study/","path":"2022/10/10/powershell-study/","title":"powershell 学习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/10/12/deploy-hexo/","path":"2022/10/12/deploy-hexo/","title":"通过Github Actions部署你的Hexo博客"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>powershell 学习 | Quoth the Raven</title>
+<title>通过Github Actions部署你的Hexo博客 | Quoth the Raven</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prelude"><span class="nav-number">1.</span> <span class="nav-text">Prelude</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">open 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">3.1.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo-d%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text">使用hexo d进行部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8github-action%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">使用github action进行部署</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/10/10/powershell-study/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/10/12/deploy-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="powershell 学习 | Quoth the Raven">
+      <meta itemprop="name" content="通过Github Actions部署你的Hexo博客 | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          powershell 学习
+          通过Github Actions部署你的Hexo博客
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +253,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-10-10 02:19:01" itemprop="dateCreated datePublished" datetime="2022-10-10T02:19:01+00:00">2022-10-10</time>
+      <time title="创建时间：2022-10-12 02:02:43" itemprop="dateCreated datePublished" datetime="2022-10-12T02:02:43+00:00">2022-10-12</time>
     </span>
 
   
@@ -272,8 +272,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="powershell 学习" href="/2022/10/10/powershell-study/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::5b399a6b31c4d8ef41b5e9acd46eff13" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="通过Github Actions部署你的Hexo博客" href="/2022/10/12/deploy-hexo/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::7900c252f7e8e4f85bfd1f1dd5731895" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,14 +284,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -302,16 +302,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习 <span id="more"></span></p>
-<h2 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h2><p>首先在 powershell 执行 <code>Code $PROFILE</code> （Code 会全局的打开 VSCode 编辑器，可能需要配置环境变量，可自行选择文本编辑器）,然后保存文件，这样能够迅速的创建一个脚本，会在每次启动 powershell 时执行。</p>
-<h2 id="open-命令"><a href="#open-命令" class="headerlink" title="open 命令"></a>open 命令</h2><p>open . 在 omz 中能迅速的打开当前文件夹，这对我来说算是非常常用的一个命令，而在 powershell 中对应的命令是 ii, 因此可以实现一个 open 方法（对于有 Typescript 经验的开发人员来说，这实在太过熟悉。。。以至于我甚至没有阅读过任何 ps 脚本文档，只是仿照着其他脚本就实现了一个简单的 open 命令</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">open</span><span class="params">([string]<span class="variable">$path</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">ii</span> <span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>读取和设置环境变量，这里直接在机器级别进行，方便后续账号切换后，配置依然生效。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getEnv</span><span class="params">([string]<span class="variable">$key</span>)</span></span> &#123;</span><br><span class="line">    [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;<span class="variable">$key</span>&quot;</span>, [<span class="type">EnvironmentVariableTarget</span>]::Machine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只添加不修改，方便回退</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setEnv</span><span class="params">([string]<span class="variable">$key</span>,[string]<span class="variable">$value</span>)</span></span> &#123;</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(</span><br><span class="line">        <span class="string">&quot;<span class="variable">$key</span>&quot;</span>,</span><br><span class="line">        [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&quot;<span class="variable">$key</span>&quot;</span>, [<span class="type">EnvironmentVariableTarget</span>]::Machine) + <span class="string">&quot;;<span class="variable">$value</span>&quot;</span>,</span><br><span class="line">        [<span class="type">EnvironmentVariableTarget</span>]::Machine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 因为 set 的时候只做了添加，为了防止重复，这里清理重复的 path</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cleanPath</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="variable">$CurrentPath</span> = [<span class="type">Environment</span>]::GetEnvironmentVariable(<span class="string">&#x27;Path&#x27;</span>,<span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line">    <span class="variable">$SplittedPath</span> = <span class="variable">$CurrentPath</span> <span class="operator">-split</span> <span class="string">&#x27;;&#x27;</span></span><br><span class="line">    <span class="variable">$CleanedPath</span> = <span class="variable">$SplittedPath</span> | <span class="built_in">Sort-Object</span> <span class="literal">-Unique</span></span><br><span class="line">    <span class="variable">$NewPath</span> = <span class="variable">$CleanedPath</span> <span class="operator">-join</span> <span class="string">&#x27;;&#x27;</span></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;Path&#x27;</span>, <span class="variable">$NewPath</span>,<span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;complete clean&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>powershell 本身提供了 remove-item 命令，这里做一个简单的映射到 rm 即可，虽然没有 -rf，但可以通过 -Recursive 和 -Force 来代替，并且即使没有传入 Flag ，也会有一个友好的交互提示如何进行下一步</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function rm([string]$path)&#123;</span><br><span class="line">    remove-item $path</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。<span id="more"></span></p>
+<h2 id="使用hexo-d进行部署"><a href="#使用hexo-d进行部署" class="headerlink" title="使用hexo d进行部署"></a>使用hexo d进行部署</h2><ol>
+<li><p>增加 <code>hexo-deployer-git</code> 依赖，在_config.yaml文件里配置 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  - type: git #提交类型git</span><br><span class="line">    repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增加部署命令：<code> &quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo g -d&quot;</code>,执行 <code>npm run deploy</code>,然后打开你的github page即可看到你的博客啦。</p>
+</li>
+</ol>
+<p>这些其实官网中都有相关的介绍了，但是有个问题，打开你的github仓库能够看到，仓库中的代码实际上是编译后的静态js html css文件，这就导致你需要一个单独的仓库去管理你的源码。</p>
+<h2 id="使用github-action进行部署"><a href="#使用github-action进行部署" class="headerlink" title="使用github action进行部署"></a>使用github action进行部署</h2><p>虽然其实严格来说上述的步骤也不麻烦，只是需要每次执行push前做一次npm run deploy，但是在阅读文档时，看到介绍，可以采用github action来做部署，因此果断尝试一下</p>
+<ol>
+<li>执行 <code>ssh-keygen -t rsa -C &quot;email&quot;</code>,不要默认命名，输入类似  xxx_blog_deploy  的名字方便你后续找到对应的 ssh key</li>
+<li>在你的github page仓库的Settings&#x2F;Deploy keys 增加xxx_blog_deploy.pub的内容，并注意要基于write access</li>
+<li>在你的blog source仓库的Settings&#x2F;Secrets 仓库增加xxx_blog_deploy 的内容</li>
+<li>在你的source的.github&#x2F;workflows 文件夹下增加 xxx.yml (我用的pnpm, npm的缓存方式可以参考<code>sma11black/hexo-action</code>示例)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  - push</span><br><span class="line">  - pull_request</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    name: A job to deploy hexo blog.</span><br><span class="line">    strategy:</span><br><span class="line">      matrix:</span><br><span class="line">        node: [ &#x27;12&#x27;, &#x27;14&#x27;, &#x27;16&#x27; ]</span><br><span class="line">    steps:</span><br><span class="line">    - name: Checkout</span><br><span class="line">      uses: actions/checkout@v2</span><br><span class="line">      with:</span><br><span class="line">        submodules: true # Checkout private submodules(themes or something else).</span><br><span class="line">    - name: Setup node</span><br><span class="line">      uses: actions/setup-node@v2</span><br><span class="line">      with:</span><br><span class="line">        node-version: $&#123;&#123; matrix.node &#125;&#125;</span><br><span class="line">    - name: Cache pnpm modules</span><br><span class="line">      uses: actions/cache@v2</span><br><span class="line">      with:</span><br><span class="line">        path: ~/.pnpm-store</span><br><span class="line">        key: $&#123;&#123; runner.os &#125;&#125;-$&#123;&#123; hashFiles(&#x27;**/pnpm-lock.yaml&#x27;) &#125;&#125;</span><br><span class="line">        restore-keys: |</span><br><span class="line">          $&#123;&#123; runner.os &#125;&#125;-</span><br><span class="line">    - uses: pnpm/action-setup@v2.0.1</span><br><span class="line">      with:</span><br><span class="line">        version: 6.0.2</span><br><span class="line">        run_install: true</span><br><span class="line">    </span><br><span class="line">    # Deploy hexo blog website.</span><br><span class="line">    - name: Deploy</span><br><span class="line">      id: deploy</span><br><span class="line">      uses: sma11black/hexo-action@v1.0.3</span><br><span class="line">      with:</span><br><span class="line">        deploy_key: $&#123;&#123; secrets.DEPLOY_KEY &#125;&#125;</span><br><span class="line">        user_name: xxx  # (or delete this input setting to use bot account)</span><br><span class="line">        user_email: xxx@xxx.com  # (or delete this input setting to use bot account)</span><br><span class="line">        commit_msg: $&#123;&#123; github.event.head_commit.message &#125;&#125;  # (or delete this input setting to use hexo default settings)</span><br><span class="line">    # Use the output from the `deploy` step(use for test action)</span><br><span class="line">    - name: Get the output</span><br><span class="line">      run: |</span><br><span class="line">        echo &quot;$&#123;&#123; steps.deploy.outputs.notify &#125;&#125;&quot;</span><br></pre></td></tr></table></figure></li>
+<li>每次git push后会自动触发github action 帮你生成静态文件，并且将静态文件推到 github page仓库了。</li>
+</ol>
+<p>希望这次是个好的开始，希望能坚持输出博客~</p>
 
     </div>
 
@@ -349,7 +357,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2022/10/10/powershell-study/" title="powershell 学习">https://lyunki.github.io/2022/10/10/powershell-study/</a>
+      <a href="https://lyunki.github.io/2022/10/12/deploy-hexo/" title="通过Github Actions部署你的Hexo博客">https://lyunki.github.io/2022/10/12/deploy-hexo/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -362,13 +370,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/10/10/daily-English/" rel="prev" title="每天英语学习">
-                  <i class="fa fa-chevron-left"></i> 每天英语学习
+                <a href="/2022/10/12/frontend-performance/" rel="prev" title="前端性能量化">
+                  <i class="fa fa-chevron-left"></i> 前端性能量化
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/10/10/git-tips/" rel="next" title="git 小知识记录">
-                  git 小知识记录 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/10/12/cron-study/" rel="next" title="Cron 表达式学习">
+                  Cron 表达式学习 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -381,7 +389,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="5b399a6b31c4d8ef41b5e9acd46eff13"></div>
+    <div class="comments" id="SOHUCS" sid="7900c252f7e8e4f85bfd1f1dd5731895"></div>
 </div>
   </main>
 
@@ -403,7 +411,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">27k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
