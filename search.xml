@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Cron 表达式学习</title>
-    <url>/2022/10/17/cron-study/</url>
+    <url>/2022/10/20/cron-study/</url>
     <content><![CDATA[<p>之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下 <span id="more"></span></p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><table>
 <thead>
@@ -76,7 +76,7 @@
   </entry>
   <entry>
     <title>通过Github Actions部署你的Hexo博客</title>
-    <url>/2022/10/17/deploy-hexo/</url>
+    <url>/2022/10/20/deploy-hexo/</url>
     <content><![CDATA[<p>最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。<span id="more"></span></p>
 <h2 id="使用hexo-d进行部署"><a href="#使用hexo-d进行部署" class="headerlink" title="使用hexo d进行部署"></a>使用hexo d进行部署</h2><ol>
 <li><p>增加 <code>hexo-deployer-git</code> 依赖，在_config.yaml文件里配置 </p>
@@ -99,7 +99,7 @@
   </entry>
   <entry>
     <title>前端性能量化</title>
-    <url>/2022/10/17/frontend-performance/</url>
+    <url>/2022/10/20/frontend-performance/</url>
     <content><![CDATA[<p>工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API <span id="more"></span></p>
 <h2 id="performance-memory"><a href="#performance-memory" class="headerlink" title="performance.memory"></a>performance.memory</h2><p>能够通过 performance.memory 获得以下数据 （都以字节计算</p>
 <ol>
@@ -111,7 +111,7 @@
   </entry>
   <entry>
     <title>git 小知识记录</title>
-    <url>/2022/10/17/git-tips/</url>
+    <url>/2022/10/20/git-tips/</url>
     <content><![CDATA[<p>最近用 git 时遇到几次修改文件名大小写不生效的问题，很是恶心，突发奇想，用 blog 记录一下那些碰到的问题<span id="more"></span></p>
 <h2 id="在-git-中修改文件名大小写"><a href="#在-git-中修改文件名大小写" class="headerlink" title="在 git 中修改文件名大小写"></a>在 git 中修改文件名大小写</h2><ol>
 <li>如果是修改文件名，可以用 git mv</li>
@@ -131,7 +131,7 @@
   </entry>
   <entry>
     <title>powershell 学习</title>
-    <url>/2022/10/17/powershell-study/</url>
+    <url>/2022/10/20/powershell-study/</url>
     <content><![CDATA[<p>本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习 <span id="more"></span></p>
 <h2 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h2><p>首先在 powershell 执行 <code>Code $PROFILE</code> （Code 会全局的打开 VSCode 编辑器，可能需要配置环境变量，可自行选择文本编辑器）,然后保存文件，这样能够迅速的创建一个脚本，会在每次启动 powershell 时执行。</p>
 <h2 id="open-命令"><a href="#open-命令" class="headerlink" title="open 命令"></a>open 命令</h2><p>open . 在 omz 中能迅速的打开当前文件夹，这对我来说算是非常常用的一个命令，而在 powershell 中对应的命令是 ii, 因此可以实现一个 open 方法（对于有 Typescript 经验的开发人员来说，这实在太过熟悉。。。以至于我甚至没有阅读过任何 ps 脚本文档，只是仿照着其他脚本就实现了一个简单的 open 命令</p>
@@ -146,7 +146,7 @@
   </entry>
   <entry>
     <title>每天英语学习</title>
-    <url>/2022/10/17/daily-English/</url>
+    <url>/2022/10/20/daily-English/</url>
     <content><![CDATA[<p>找个地方背一下单词 <span id="more"></span></p>
 <h2 id="2022-x2F-08-x2F-23"><a href="#2022-x2F-08-x2F-23" class="headerlink" title="2022&#x2F;08&#x2F;23"></a>2022&#x2F;08&#x2F;23</h2><p>portrait: a family portrait<br>fisherman: The water came up to the fisherman’s thights.<br>contract: a research contract<br>subtract: Subtract four from nine and you have five.<br>fireman: I saw a fireman racing to the fire.<br>truck: coal truck<br>trail: trailing plants.<br>postman: He looked like a postman but he was really a fake.<br>manly: a deep manly voice<br>attract: Leftover food attracts flies.<br>abstract: He is an abstract painter.<br>trace: traces of poison.<br>track: tyre tracks.<br>gentleman: He’s no gentleman.<br>policeman: A policeman has been shot dead in an ambush.<br>mankind: the history of mankind.<br>salesman: That salesman is a real crook.<br>statesman: a respected elder statesman.<br>seaman: a merchant seaman<br>tractor: He learnt tractor maintenance.<br>distract: a distracting noise.<br>spokesman: a White House spokesman.<br>extract: yeast extract<br>trigger: nuclear triggers.<br>tradesman: This is a job for skilled tradesman.<br>deposit: to pay a deposit.<br>preposition: The word is compounded of a preposition and a verb.<br>parcel: She parcelled up the photos.<br>ingenuity: You see the ingenuity of the phrasing<br>pertinent: a pertinent question.<br>generosity: acts of generosity.<br>detain: a man has been detained for questioning.</p>
 <h2 id="2022-x2F-08-x2F-24"><a href="#2022-x2F-08-x2F-24" class="headerlink" title="2022&#x2F;08&#x2F;24"></a>2022&#x2F;08&#x2F;24</h2><p>elect: the persident elect<br>handy: a handy little tool.<br>colleague: a colleague of mine from the office<br>handsome: a handsome fee<br>college: college compuses<br>diligent: a diligent student<br>collect:<br>handwriting: I can’t read his handwriting<br>neglect: a neglected garden<br>election: to vote in an election<br>handkerchief: He took out a handkerchief and blew his noise.<br>intelligence: intelligence reports<br>handful: a handful of rice<br>intelligent: an intelligent question<br>handle: a broom handle<br>shorthand: a shorthand typist<br>intellect: a man of considerable intellect<br>handicap: mental handicap<br>beforehand: I wish we’d known about it beforehand.<br>negligible: a negligible amount<br>handbook: None of them has got a handboox to tourists.<br>eligant: an eligant dress<br>handout: a cash handout<br>second-hand: a second-hand computer<br>sustain: a sustain attack</p>
@@ -177,6 +177,8 @@
 <h2 id="2022-x2F-10-x2F-13"><a href="#2022-x2F-10-x2F-13" class="headerlink" title="2022&#x2F;10&#x2F;13"></a>2022&#x2F;10&#x2F;13</h2><p>adj. A place that is <code>packed</code> is very crowded.<br>n.[C] Your <code>profile</code> is the outline of your face as it is seen when someone is looking at you from the side.<br>adj. <code>Mental</code> means relating to the processing of thinking.<br>n.[U] If you are allowed <code>credit</code>, you are allowed to pay for goods or services serveral weeks or months after you have received them.<br>v. If one thing <code>incorporates</code> another thing, it includes the other thing.<br>v. If you <code>encounter</code> problems or difficults, you experience them.<br>adj. Someone or something that is <code>productive</code> produces or does a lot for the amount of resources used.</p>
 <h2 id="2022-x2F-10-x2F-14"><a href="#2022-x2F-10-x2F-14" class="headerlink" title="2022&#x2F;10&#x2F;14"></a>2022&#x2F;10&#x2F;14</h2><p>v. If you <code>hustle</code> someone, you try to make them go somewhere or do something quickly, for example bu pulling or pushing them along.<br>n.[C] An <code>apartment</code> is a set of room for living in, usually on one floor of a large building.<br>n.[C] A <code>metroppolis</code> is the largest, buigest, and most important city in a country or region.<br>n.[C] If there is a <code>boom</code> in the economy, there is an increase in economic activity.<br>v. If you <code>scatter</code> things over an area, you throw or drop them so that they spread all over the area.<br>n.[U] <code>Efficiency</code> is the quality of being able to do a task successfully, without wasting time or energy.<br>n.[U] <code>Litter</code> is rubbish that is left lying around outside.</p>
 <h2 id="2022-x2F-10-x2F-17"><a href="#2022-x2F-10-x2F-17" class="headerlink" title="2022&#x2F;10&#x2F;17"></a>2022&#x2F;10&#x2F;17</h2><p>v. If someone or something <code>thrives</code>, they do well and are successful, healthy, or strong.<br>v. If you <code>possess</code> something, you have it or own it.<br>n.[C] <code>Orchids</code> are plants with brightly coloured, unually shaped flowers.<br>n.[U] <code>Prosperity</code> is a condition in which a person or community is doing well financially.<br>adj. Something that is <code>auspicious</code> indicates that success is likely.<br>v. If one thing or person <code>resembles</code> another, they are similar to each other.</p>
+<h2 id="2022-x2F-10-x2F-19"><a href="#2022-x2F-10-x2F-19" class="headerlink" title="2022&#x2F;10&#x2F;19"></a>2022&#x2F;10&#x2F;19</h2><p>n.[VAR] A <code>metaphor</code> is an imaginative way of describing something by referring to something else which is the same in a particular way. For example, if you want to say someone is very shy and frightened, you might say that they are a mouse.<br>v. If someone <code>violate</code> an agreement, law, or promise, they break it.<br>adj. You use <code>particular</code> to emphasize that you are talking about one thing or one kind of thing rather than one other similar ones.<br>n.[C] A <code>cactus</code> is a thick fleshy plant that grows in many hot, dry parts of the world. Cacti have no leaves and many of them are covered with prickles.<br>n. A <code>bloom</code> is the flower on a plant.<br>n.[VAR] <code>Bloosom</code> is the flowers that apper on a tree before the fruit.<br>adj. Someone who is <code>furious</code> is &#96;extremely angry.</p>
+<h2 id="2022-x2F-10-x2F-20"><a href="#2022-x2F-10-x2F-20" class="headerlink" title="2022&#x2F;10&#x2F;20"></a>2022&#x2F;10&#x2F;20</h2><p>n.[C] The <code>kernel</code> of a nut is the part that is inside the shell.<br>v. If something is embellished with decorative features or patterns, it has those features or patterns on it and they make it look more attractive.<br>v. When a cake or bread <code>bakes</code> or when you bake it, it cooks in the oven without any extra liquid or fat.<br>n.[VAR] A <code>lawn</code> is an area of grass that is kept cut short.<br>n.[VAR] If you feel a sense of <code>relief</code>, you feel happy because something unpleasant has not happened or is no longer happening.<br>n.[C] A <code>lodge</code> is a house or hut in the country or in the mountains where people stay on holiday, especially when they want to shoot or fish.<br>v. If you <code>anticipate</code> an event, you realize in advance that it may happen and you are prepared for it.<br>v. If you <code>cite</code> something, you quote it or mention it, especially as an example or proof of what you are saying.<br>v. If you <code>scratch</code> yourself, you rub your fingernails against your skin because it is itching.</p>
 ]]></content>
   </entry>
 </search>
