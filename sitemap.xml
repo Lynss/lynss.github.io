@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lyunki.github.io/2022/10/27/git-tips/</loc>
-    
-    <lastmod>2022-10-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lyunki.github.io/2022/10/27/powershell-study/</loc>
-    
-    <lastmod>2022-10-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lyunki.github.io/2022/10/27/cron-study/</loc>
     
     <lastmod>2022-10-27</lastmod>
@@ -39,6 +21,24 @@
   
   <url>
     <loc>https://lyunki.github.io/2022/10/27/frontend-performance/</loc>
+    
+    <lastmod>2022-10-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lyunki.github.io/2022/10/27/git-tips/</loc>
+    
+    <lastmod>2022-10-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lyunki.github.io/2022/10/27/powershell-study/</loc>
     
     <lastmod>2022-10-27</lastmod>
     
