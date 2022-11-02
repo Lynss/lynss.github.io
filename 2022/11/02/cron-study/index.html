@@ -23,28 +23,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。">
+    <meta name="description" content="之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过Github Actions部署你的Hexo博客">
-<meta property="og:url" content="https://lyunki.github.io/2022/11/01/deploy-hexo/index.html">
+<meta property="og:title" content="Cron 表达式学习">
+<meta property="og:url" content="https://lyunki.github.io/2022/11/02/cron-study/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。">
+<meta property="og:description" content="之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-01T09:35:25.052Z">
-<meta property="article:modified_time" content="2022-11-01T09:35:25.052Z">
+<meta property="article:published_time" content="2022-11-02T02:00:43.954Z">
+<meta property="article:modified_time" content="2022-11-02T02:00:43.954Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2022/11/01/deploy-hexo/">
+<link rel="canonical" href="https://lyunki.github.io/2022/11/02/cron-study/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/11/01/deploy-hexo/","path":"2022/11/01/deploy-hexo/","title":"通过Github Actions部署你的Hexo博客"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2022/11/02/cron-study/","path":"2022/11/02/cron-study/","title":"Cron 表达式学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>通过Github Actions部署你的Hexo博客 | Quoth the Raven</title>
+<title>Cron 表达式学习 | Quoth the Raven</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo-d%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="nav-number">1.</span> <span class="nav-text">使用hexo d进行部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8github-action%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">使用github action进行部署</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C"><span class="nav-number">2.</span> <span class="nav-text">* 和 ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">需要注意的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E5%90%AB%E4%B9%89"><span class="nav-number">4.</span> <span class="nav-text">特殊字符含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-number">5.</span> <span class="nav-text">实战</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/11/01/deploy-hexo/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2022/11/02/cron-study/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="通过Github Actions部署你的Hexo博客 | Quoth the Raven">
+      <meta itemprop="name" content="Cron 表达式学习 | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          通过Github Actions部署你的Hexo博客
+          Cron 表达式学习
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +253,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-11-01 09:35:25" itemprop="dateCreated datePublished" datetime="2022-11-01T09:35:25+00:00">2022-11-01</time>
+      <time title="创建时间：2022-11-02 02:00:43" itemprop="dateCreated datePublished" datetime="2022-11-02T02:00:43+00:00">2022-11-02</time>
     </span>
 
   
@@ -272,8 +272,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="通过Github Actions部署你的Hexo博客" href="/2022/11/01/deploy-hexo/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::48751fea1d77eb70beacf178d50c4152" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="Cron 表达式学习" href="/2022/11/02/cron-study/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::a090f3cde919a278eb3101517f73a396" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,14 +284,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -302,25 +302,76 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。<span id="more"></span></p>
-<h2 id="使用hexo-d进行部署"><a href="#使用hexo-d进行部署" class="headerlink" title="使用hexo d进行部署"></a>使用hexo d进行部署</h2><ol>
-<li><p>增加 <code>hexo-deployer-git</code> 依赖，在_config.yaml文件里配置 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  - type: git #提交类型git</span><br><span class="line">    repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>增加部署命令：<code> &quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo g -d&quot;</code>,执行 <code>npm run deploy</code>,然后打开你的github page即可看到你的博客啦。</p>
-</li>
-</ol>
-<p>这些其实官网中都有相关的介绍了，但是有个问题，打开你的github仓库能够看到，仓库中的代码实际上是编译后的静态js html css文件，这就导致你需要一个单独的仓库去管理你的源码。</p>
-<h2 id="使用github-action进行部署"><a href="#使用github-action进行部署" class="headerlink" title="使用github action进行部署"></a>使用github action进行部署</h2><p>虽然其实严格来说上述的步骤也不麻烦，只是需要每次执行push前做一次npm run deploy，但是在阅读文档时，看到介绍，可以采用github action来做部署，因此果断尝试一下</p>
+        <p>之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下 <span id="more"></span></p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Allowed Values</th>
+<th>Allowed Special Characters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Seconds</td>
+<td>Y</td>
+<td>0-59</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Minutes</td>
+<td>Y</td>
+<td>0-59</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Hours</td>
+<td>Y</td>
+<td>0-23</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Day of month</td>
+<td>Y</td>
+<td>1-31</td>
+<td>, - * ? &#x2F; L W</td>
+</tr>
+<tr>
+<td>Month</td>
+<td>Y</td>
+<td>0-11 or JAN-DEC</td>
+<td>, - * &#x2F;</td>
+</tr>
+<tr>
+<td>Day of week</td>
+<td>Y</td>
+<td>1-7 or SUN-SAT</td>
+<td>, - * ? &#x2F; L #</td>
+</tr>
+<tr>
+<td>Year</td>
+<td>N</td>
+<td>empty or 1970-2099</td>
+<td>, - * &#x2F;</td>
+</tr>
+</tbody></table>
+<h2 id="和"><a href="#和" class="headerlink" title="* 和 ?"></a>* 和 ?</h2><p>这里值得一提的是 * 和 ? 的区别</p>
+<p>*: 很好理解，代表所有的，例如所有时刻的每一秒就是 <code>* * * * * ? </code> </p>
+<p>?: 代表不受控制的，只能由 Day of week 和 Day of month使用，因为二者是互斥的，例如：</p>
+<p>当你指定 Day of week 为周 1 时，对应的 Day of month 是 ?, 随意几号<br>当你指定 Day of month 为每月 1 号时，对应的Day of week 就需要为 ?, 随意周几</p>
+<h2 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h2><p>Day of week里 0代指的是周日</p>
+<h2 id="特殊字符含义"><a href="#特殊字符含义" class="headerlink" title="特殊字符含义"></a>特殊字符含义</h2><p>为了方便，都用数字来表示。</p>
 <ol>
-<li>执行 <code>ssh-keygen -t rsa -C &quot;email&quot;</code>,不要默认命名，输入类似  xxx_blog_deploy  的名字方便你后续找到对应的 ssh key</li>
-<li>在你的github page仓库的Settings&#x2F;Deploy keys 增加xxx_blog_deploy.pub的内容，并注意要基于write access</li>
-<li>在你的blog source仓库的Settings&#x2F;Secrets 仓库增加xxx_blog_deploy 的内容</li>
-<li>在你的source的.github&#x2F;workflows 文件夹下增加 xxx.yml (我用的pnpm, npm的缓存方式可以参考<code>sma11black/hexo-action</code>示例)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  - push</span><br><span class="line">  - pull_request</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    name: A job to deploy hexo blog.</span><br><span class="line">    strategy:</span><br><span class="line">      matrix:</span><br><span class="line">        node: [ &#x27;12&#x27;, &#x27;14&#x27;, &#x27;16&#x27; ]</span><br><span class="line">    steps:</span><br><span class="line">    - name: Checkout</span><br><span class="line">      uses: actions/checkout@v2</span><br><span class="line">      with:</span><br><span class="line">        submodules: true # Checkout private submodules(themes or something else).</span><br><span class="line">    - name: Setup node</span><br><span class="line">      uses: actions/setup-node@v2</span><br><span class="line">      with:</span><br><span class="line">        node-version: $&#123;&#123; matrix.node &#125;&#125;</span><br><span class="line">    - name: Cache pnpm modules</span><br><span class="line">      uses: actions/cache@v2</span><br><span class="line">      with:</span><br><span class="line">        path: ~/.pnpm-store</span><br><span class="line">        key: $&#123;&#123; runner.os &#125;&#125;-$&#123;&#123; hashFiles(&#x27;**/pnpm-lock.yaml&#x27;) &#125;&#125;</span><br><span class="line">        restore-keys: |</span><br><span class="line">          $&#123;&#123; runner.os &#125;&#125;-</span><br><span class="line">    - uses: pnpm/action-setup@v2.0.1</span><br><span class="line">      with:</span><br><span class="line">        version: 6.0.2</span><br><span class="line">        run_install: true</span><br><span class="line">    </span><br><span class="line">    # Deploy hexo blog website.</span><br><span class="line">    - name: Deploy</span><br><span class="line">      id: deploy</span><br><span class="line">      uses: sma11black/hexo-action@v1.0.3</span><br><span class="line">      with:</span><br><span class="line">        deploy_key: $&#123;&#123; secrets.DEPLOY_KEY &#125;&#125;</span><br><span class="line">        user_name: xxx  # (or delete this input setting to use bot account)</span><br><span class="line">        user_email: xxx@xxx.com  # (or delete this input setting to use bot account)</span><br><span class="line">        commit_msg: $&#123;&#123; github.event.head_commit.message &#125;&#125;  # (or delete this input setting to use hexo default settings)</span><br><span class="line">    # Use the output from the `deploy` step(use for test action)</span><br><span class="line">    - name: Get the output</span><br><span class="line">      run: |</span><br><span class="line">        echo &quot;$&#123;&#123; steps.deploy.outputs.notify &#125;&#125;&quot;</span><br></pre></td></tr></table></figure></li>
-<li>每次git push后会自动触发github action 帮你生成静态文件，并且将静态文件推到 github page仓库了。</li>
+<li>,: 可以理解为一个数组， 例如 1,3,10 * * * * ? 代表每分钟的第 1 秒、第 3 秒、第 10 秒执行</li>
+<li>-: 表示连续的范围，可以理解为数组的简写 1-6 对应的数组完全体写法就是 1,2,3,4,5,6</li>
+<li>*: 匹配所有值，对于秒就是 0-59 ，对于月就是 0-11</li>
+<li>?: 无法控制的，也不需要在意的，例如当我在意的是每周1，我就无法在意或控制周一对应的是每月的1号</li>
+<li>&#x2F;: 表示step,例如在 Day of month 上 x&#x2F;y 完整形式可以写成x-31&#x2F;y (有的月份30天，有的31天，可能不一样。以此类推，如果是在秒上，就是 x-59&#x2F;y) ，表示的意思就是从 每月x号开始一直到31号，每隔y天执行一次</li>
+<li>L: 表示最后的,只能在 Day of month 和Day of week 上使用，在Day of month 上表示每月的最后一天（闰年的2月最后一天是28号），在 Day of week 上表示每周的最后一个天（周六）。但也可以带上数字，7L 表示每个月的最后一个周六 </li>
+<li>W: 表示月份离工作日（周一到周五）最接近的 Day of month。例如 1W，如果月份 1 号是周六，那么对应的就是 3 号，再例如 2W，如果月份 2 号是周六 ，则对应的是 1 号。</li>
+<li>#: y#x 只能用在 Day of week上，表示每月的第 x 个周 y (周7表示周六，周1表示周天)</li>
 </ol>
-<p>希望这次是个好的开始，希望能坚持输出博客~</p>
-
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 每年的母亲节早上7点</span><br><span class="line">0 0 7 ? 5 1#2</span><br><span class="line">// 每年的父亲节早上7点</span><br><span class="line">0 0 7 ? 6 1#3</span><br><span class="line">// 每年元旦的早上7点</span><br><span class="line">0 0 7 1 1 ?</span><br><span class="line">// 每周一早上9点半</span><br><span class="line">0 30 9 ? * 1</span><br><span class="line">// 每周五下午6点</span><br><span class="line">0 0 6 ? * 5</span><br><span class="line">// 每个月的最后一个非周末的下午6点</span><br><span class="line">0 0 6 ? * WL</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -357,7 +408,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2022/11/01/deploy-hexo/" title="通过Github Actions部署你的Hexo博客">https://lyunki.github.io/2022/11/01/deploy-hexo/</a>
+      <a href="https://lyunki.github.io/2022/11/02/cron-study/" title="Cron 表达式学习">https://lyunki.github.io/2022/11/02/cron-study/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -370,14 +421,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/11/01/frontend-performance/" rel="prev" title="前端性能量化">
-                  <i class="fa fa-chevron-left"></i> 前端性能量化
+                <a href="/2022/11/02/deploy-hexo/" rel="prev" title="通过Github Actions部署你的Hexo博客">
+                  <i class="fa fa-chevron-left"></i> 通过Github Actions部署你的Hexo博客
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/11/01/cron-study/" rel="next" title="Cron 表达式学习">
-                  Cron 表达式学习 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -389,7 +437,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="48751fea1d77eb70beacf178d50c4152"></div>
+    <div class="comments" id="SOHUCS" sid="a090f3cde919a278eb3101517f73a396"></div>
 </div>
   </main>
 
