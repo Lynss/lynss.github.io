@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lyunki.github.io/2022/11/11/cron-study/</loc>
-    
-    <lastmod>2022-11-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lyunki.github.io/2022/11/11/deploy-hexo/</loc>
     
     <lastmod>2022-11-11</lastmod>
@@ -39,6 +30,15 @@
   
   <url>
     <loc>https://lyunki.github.io/2022/11/11/powershell-study/</loc>
+    
+    <lastmod>2022-11-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lyunki.github.io/2022/11/11/cron-study/</loc>
     
     <lastmod>2022-11-11</lastmod>
     
