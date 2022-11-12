@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lyunki.github.io/2022/11/12/deploy-hexo/</loc>
+    
+    <lastmod>2022-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lyunki.github.io/2022/11/12/frontend-performance/</loc>
     
     <lastmod>2022-11-12</lastmod>
@@ -29,25 +38,16 @@
   </url>
   
   <url>
-    <loc>https://lyunki.github.io/2022/11/12/cron-study/</loc>
-    
-    <lastmod>2022-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lyunki.github.io/2022/11/12/deploy-hexo/</loc>
-    
-    <lastmod>2022-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lyunki.github.io/2022/11/12/daily-English/</loc>
+    
+    <lastmod>2022-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lyunki.github.io/2022/11/12/cron-study/</loc>
     
     <lastmod>2022-11-12</lastmod>
     
