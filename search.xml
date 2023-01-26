@@ -155,7 +155,7 @@
 <h2 id="配置秘钥"><a href="#配置秘钥" class="headerlink" title="配置秘钥"></a>配置秘钥</h2><ol>
 <li>执行 ssh-keygen， 这里建议给生成的文件配置一个单独的名称，例如<code>id_rsa.vultr</code><br><img src="/images/vscode/id_rsa.vultr.png"></li>
 <li>执行 <code>cat ~/.ssh/id_rsa.vultr.pub</code>, 将内容复制下来</li>
-<li>在远程服务器上，打开 authorized_keys 文件，将刚刚的内容贴上去</li>
+<li>在远程服务器上，打开 <code>~/.ssh/authorized_keys</code> 文件，将刚刚的内容贴上去</li>
 <li>在 vscode 远程资源管理中，点击右上角配置文件<br><img src="/images/vscode/2.png"></li>
 <li>在配置文件中配置 IdentiyFile 路径<br><img src="/images/vscode/3.png"></li>
 </ol>
