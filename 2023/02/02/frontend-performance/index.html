@@ -23,28 +23,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="最近用 git 时遇到几次修改文件名大小写不生效的问题，很是恶心，突发奇想，用 blog 记录一下那些碰到的问题">
+    <meta name="description" content="工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git 小知识记录">
-<meta property="og:url" content="https://lyunki.github.io/2023/01/27/git-tips/index.html">
+<meta property="og:title" content="前端性能量化">
+<meta property="og:url" content="https://lyunki.github.io/2023/02/02/frontend-performance/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="最近用 git 时遇到几次修改文件名大小写不生效的问题，很是恶心，突发奇想，用 blog 记录一下那些碰到的问题">
+<meta property="og:description" content="工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-27T10:32:41.131Z">
-<meta property="article:modified_time" content="2023-01-27T10:32:41.131Z">
+<meta property="article:published_time" content="2023-02-02T02:50:02.109Z">
+<meta property="article:modified_time" content="2023-02-02T02:50:02.109Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2023/01/27/git-tips/">
+<link rel="canonical" href="https://lyunki.github.io/2023/02/02/frontend-performance/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2023/01/27/git-tips/","path":"2023/01/27/git-tips/","title":"git 小知识记录"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2023/02/02/frontend-performance/","path":"2023/02/02/frontend-performance/","title":"前端性能量化"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>git 小知识记录 | Quoth the Raven</title>
+<title>前端性能量化 | Quoth the Raven</title>
   
 
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-git-%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="nav-number">1.</span> <span class="nav-text">在 git 中修改文件名大小写</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#performance-memory"><span class="nav-number">1.</span> <span class="nav-text">performance.memory</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/01/27/git-tips/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/02/02/frontend-performance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -237,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="git 小知识记录 | Quoth the Raven">
+      <meta itemprop="name" content="前端性能量化 | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          git 小知识记录
+          前端性能量化
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +253,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-01-27 10:32:41" itemprop="dateCreated datePublished" datetime="2023-01-27T10:32:41+00:00">2023-01-27</time>
+      <time title="创建时间：2023-02-02 02:50:02" itemprop="dateCreated datePublished" datetime="2023-02-02T02:50:02+00:00">2023-02-02</time>
     </span>
 
   
@@ -272,8 +272,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="git 小知识记录" href="/2023/01/27/git-tips/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::9a2f2ac5051d69ae532c9c5ae9de3609" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="前端性能量化" href="/2023/02/02/frontend-performance/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::93ffbc9aef2dd482b12284c0155d408c" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,7 +284,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>234</span>
+      <span>339</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -302,21 +302,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>最近用 git 时遇到几次修改文件名大小写不生效的问题，很是恶心，突发奇想，用 blog 记录一下那些碰到的问题<span id="more"></span></p>
-<h2 id="在-git-中修改文件名大小写"><a href="#在-git-中修改文件名大小写" class="headerlink" title="在 git 中修改文件名大小写"></a>在 git 中修改文件名大小写</h2><ol>
-<li>如果是修改文件名，可以用 git mv</li>
+        <p>工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API <span id="more"></span></p>
+<h2 id="performance-memory"><a href="#performance-memory" class="headerlink" title="performance.memory"></a>performance.memory</h2><p>能够通过 performance.memory 获得以下数据 （都以字节计算</p>
+<ol>
+<li><code>usedJSHeapSize</code> : 当前 JS 堆活跃段（segment）的体积 The currently active segment of JS heap, in bytes.</li>
+<li><code>totalJSHeapSize</code> : 已分配的堆体积 The total allocated heap size, in bytes.</li>
+<li><code>jsHeapSizeLimit</code> : 上下文内可用堆的最大体积 The maximum size of the heap, in bytes, that is available to the context</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv -f yOuRfIlEnAmE yourfilename</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>修改 gitconfig</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git config core.ignorecase false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- in ~/.gitconfig --&gt;</span><br><span class="line">[core]</span><br><span class="line">	ignorecase = false</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>删除 git 文件</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached xxxx</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -354,7 +346,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2023/01/27/git-tips/" title="git 小知识记录">https://lyunki.github.io/2023/01/27/git-tips/</a>
+      <a href="https://lyunki.github.io/2023/02/02/frontend-performance/" title="前端性能量化">https://lyunki.github.io/2023/02/02/frontend-performance/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -367,13 +359,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/01/27/powershell-study/" rel="prev" title="powershell 学习">
-                  <i class="fa fa-chevron-left"></i> powershell 学习
+                <a href="/2023/02/02/git-tips/" rel="prev" title="git 小知识记录">
+                  <i class="fa fa-chevron-left"></i> git 小知识记录
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/27/frontend-performance/" rel="next" title="前端性能量化">
-                  前端性能量化 <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/02/deploy-hexo/" rel="next" title="通过Github Actions部署你的Hexo博客">
+                  通过Github Actions部署你的Hexo博客 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -386,7 +378,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="9a2f2ac5051d69ae532c9c5ae9de3609"></div>
+    <div class="comments" id="SOHUCS" sid="93ffbc9aef2dd482b12284c0155d408c"></div>
 </div>
   </main>
 
@@ -408,14 +400,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">48k</span>
+    <span title="站点总字数">8k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">44 分钟</span>
+    <span title="站点阅读时长">7 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
