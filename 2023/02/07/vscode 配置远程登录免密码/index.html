@@ -23,39 +23,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="记录英语学习的一些知识点">
+    <meta name="description" content="最近，发现 vscode 的远程开发能力很棒，这里记录一个免密登录的方法，避免每次链接远程服务器都需要使用密码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="英语学习">
-<meta property="og:url" content="https://lyunki.github.io/2023/02/02/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="VSCode 配置远程登录免密码.md">
+<meta property="og:url" content="https://lyunki.github.io/2023/02/07/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="记录英语学习的一些知识点">
+<meta property="og:description" content="最近，发现 vscode 的远程开发能力很棒，这里记录一个免密登录的方法，避免每次链接远程服务器都需要使用密码">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-4c361186e04cd175608c1c3020489fa5_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-981d99e00cac1e0a795b8abee4a5688b_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-77b3614ab60fd115583bcd7cde117cb6_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-a6b4f9b175c35b096e4a9415fb6af259_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-0a7ace22b41d1af473e09f2425c8651d_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-8f289ce6c4461b0bb7109dc0a760d72b_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-86c5ed08009eca592f5ac867e071bc19_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-2a5669cbe5a878dfda054d202c463b29_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-8e61f0b289b054d31e22ab86c6d9343f_720w.webp">
-<meta property="og:image" content="https://lyunki.github.io/images/posts/v2-c5c9da5dc1572a12f255408ba4905e90_720w.webp">
-<meta property="article:published_time" content="2023-02-02T06:27:59.759Z">
-<meta property="article:modified_time" content="2023-02-02T06:27:59.759Z">
+<meta property="og:image" content="https://lyunki.github.io/images/posts/id_rsa.vultr.png">
+<meta property="og:image" content="https://lyunki.github.io/images/posts/2.png">
+<meta property="og:image" content="https://lyunki.github.io/images/posts/3.png">
+<meta property="article:published_time" content="2023-02-07T03:08:09.720Z">
+<meta property="article:modified_time" content="2023-02-07T03:08:09.720Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lyunki.github.io/images/posts/v2-4c361186e04cd175608c1c3020489fa5_720w.webp">
+<meta name="twitter:image" content="https://lyunki.github.io/images/posts/id_rsa.vultr.png">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2023/02/02/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">
+<link rel="canonical" href="https://lyunki.github.io/2023/02/07/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2023/02/02/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/","path":"2023/02/02/英语学习/","title":"英语学习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2023/02/07/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/","path":"2023/02/07/vscode 配置远程登录免密码/","title":"VSCode 配置远程登录免密码.md"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>英语学习 | Quoth the Raven</title>
+<title>VSCode 配置远程登录免密码.md | Quoth the Raven</title>
   
 
 
@@ -158,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%B1%E8%AF%AD%E7%9A%84%E8%AF%8D%E6%80%A7%EF%BC%88%E8%AF%8D%E7%B1%BB%EF%BC%89-%EF%BC%88word-classes%EF%BC%89%EF%BC%88parts-of-speech"><span class="nav-number">1.</span> <span class="nav-text">英语的词性（词类） （word classes）（parts of speech)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%B1%E8%AF%AD%E7%9A%84%E5%8F%A5%E5%AD%90%E6%88%90%E5%88%86%EF%BC%88Sentence-structure%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">英语的句子成分（Sentence structure）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%B1%E8%AF%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8F%A5%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">英语的基本句式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%B1%E8%AF%AD%E6%97%B6%E6%80%81"><span class="nav-number">4.</span> <span class="nav-text">英语时态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%8F%A5"><span class="nav-number">4.1.</span> <span class="nav-text">例句</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prerequisite"><span class="nav-number">1.</span> <span class="nav-text">Prerequisite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="nav-number">2.</span> <span class="nav-text">配置秘钥</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +228,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/02/02/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/02/07/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -248,12 +241,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="英语学习 | Quoth the Raven">
+      <meta itemprop="name" content="VSCode 配置远程登录免密码.md | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          英语学习
+          VSCode 配置远程登录免密码.md
         </h1>
 
         <div class="post-meta-container">
@@ -264,7 +257,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-02-02 06:27:59" itemprop="dateCreated datePublished" datetime="2023-02-02T06:27:59+00:00">2023-02-02</time>
+      <time title="创建时间：2023-02-07 03:08:09" itemprop="dateCreated datePublished" datetime="2023-02-07T03:08:09+00:00">2023-02-07</time>
     </span>
 
   
@@ -283,8 +276,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="英语学习" href="/2023/02/02/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::0815dda196d9934e726fbb8826b54b53" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="VSCode 配置远程登录免密码.md" href="/2023/02/07/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::199f529387336af8cb58b451d1d8e6f4" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -295,14 +288,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.7k</span>
+      <span>307</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -313,116 +306,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>记录英语学习的一些知识点 <span id="more"></span></p>
-<h2 id="英语的词性（词类）-（word-classes）（parts-of-speech"><a href="#英语的词性（词类）-（word-classes）（parts-of-speech" class="headerlink" title="英语的词性（词类） （word classes）（parts of speech)"></a>英语的词性（词类） （word classes）（parts of speech)</h2><p>目前网上存在两种说法，其中中文搜索的结果说英语有 10 种词类，但是英文搜索的结果是 9 种（没有归类数词），这里采用英文搜索的结果。</p>
-<p>其中，有四种主要的词类</p>
-<ol>
-<li>名词 (Noun)</li>
-<li>动词 (Verb)</li>
-<li>形容词 (Adjective)</li>
-<li>副词 (Adverb)</li>
+        <p>最近，发现 vscode 的远程开发能力很棒，这里记录一个免密登录的方法，避免每次链接远程服务器都需要使用密码 <span id="more"></span></p>
+<h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ol>
+<li>本地安装好了 ssh 客户端</li>
+<li>vscode 安装了 remote development 相关的远程插件</li>
 </ol>
-<p>其它的词类包括</p>
-<ol start="5">
-<li>代词 Pronoun (e.g. I, you, me, we, mine, someone, he, she)</li>
-<li>介词 Preposition (e.g. at, in, on, across, behind, for)</li>
-<li>连词 Conjunction (e.g. and, but, when, if, because)</li>
-<li>限定词 Determiner (e.g. a, the, an, this, etc.)</li>
-<li>感叹词 Exclamation or Interjection (e.g. oh, ah, wow, ouch)</li>
+<h2 id="配置秘钥"><a href="#配置秘钥" class="headerlink" title="配置秘钥"></a>配置秘钥</h2><ol>
+<li>执行 ssh-keygen， 这里建议给生成的文件配置一个单独的名称，例如<code>id_rsa.vultr</code><br><img src="/images/posts/id_rsa.vultr.png"></li>
+<li>执行 <code>cat ~/.ssh/id_rsa.vultr.pub</code>, 将内容复制下来</li>
+<li>在远程服务器上，打开 <code>~/.ssh/authorized_keys</code> 文件，将刚刚的内容贴上去</li>
+<li>在 vscode 远程资源管理中，点击右上角配置文件<br><img src="/images/posts/2.png"></li>
+<li>在配置文件中配置 IdentiyFile 路径<br><img src="/images/posts/3.png"></li>
 </ol>
-<h2 id="英语的句子成分（Sentence-structure）"><a href="#英语的句子成分（Sentence-structure）" class="headerlink" title="英语的句子成分（Sentence structure）"></a>英语的句子成分（Sentence structure）</h2><ol>
-<li>主语（subject）</li>
-</ol>
-<p>一般作为 “动作的发起者” svo 或者 “表述的对象” svp<br><img src="/images/posts/v2-4c361186e04cd175608c1c3020489fa5_720w.webp"><br><img src="/images/posts/v2-981d99e00cac1e0a795b8abee4a5688b_720w.webp"></p>
-<ol start="2">
-<li>谓语（predicate）</li>
-</ol>
-<p>对主语动作状态或特征的陈述或说明，指出“做什么（what to do）” “是什么（what is this）”</p>
-<p><img src="/images/posts/v2-77b3614ab60fd115583bcd7cde117cb6_720w.webp"></p>
-<ol start="3">
-<li>表语（predicative）</li>
-</ol>
-<p>用来说明主语的身份、性质、品性、特征和状态等。<br><img src="/images/posts/v2-a6b4f9b175c35b096e4a9415fb6af259_720w.webp"></p>
-<ol start="4">
-<li>宾语（object）</li>
-</ol>
-<p>一般用在及物动词的后面，表示行为动作所涉及的对象。宾语跟主语是相对的，只要能做主语的成分都能做宾语。<br><img src="/images/posts/v2-0a7ace22b41d1af473e09f2425c8651d_720w.webp"></p>
-<ol start="5">
-<li>定语（attribute）</li>
-</ol>
-<p>用来修饰、限定、说明名词或代词的品质与特征的。</p>
-<p><img src="/images/posts/v2-8f289ce6c4461b0bb7109dc0a760d72b_720w.webp"></p>
-<ol start="6">
-<li>状语(adverbial)</li>
-</ol>
-<p>主要用来修饰谓语或句子。包括：时间、地点、原因、结果、目的、方式、条件、让步、比较、伴随。<br><img src="/images/posts/v2-86c5ed08009eca592f5ac867e071bc19_720w.webp"></p>
-<ol start="7">
-<li>补语（complement）</li>
-</ol>
-<p>补充说明主语或宾语，使其意义更完整，在句法上是不可或缺的一部分。</p>
-<p>主语补语<br><img src="/images/posts/v2-2a5669cbe5a878dfda054d202c463b29_720w.webp"></p>
-<p>宾语补语<br><img src="/images/posts/v2-8e61f0b289b054d31e22ab86c6d9343f_720w.webp"></p>
-<ol start="8">
-<li>同位语</li>
-</ol>
-<p>用来补充说明名词，代词.</p>
-<p><img src="/images/posts/v2-c5c9da5dc1572a12f255408ba4905e90_720w.webp"></p>
-<h2 id="英语的基本句式"><a href="#英语的基本句式" class="headerlink" title="英语的基本句式"></a>英语的基本句式</h2><ol>
-<li>S V （主＋谓）</li>
-<li>S V P （主＋系＋表）</li>
-<li>S V O （主＋谓＋宾）</li>
-<li>S V O O（主＋谓＋间宾＋直宾）</li>
-<li>S V O C（主＋谓＋宾＋宾补）</li>
-</ol>
-<h2 id="英语时态"><a href="#英语时态" class="headerlink" title="英语时态"></a>英语时态</h2><p>时态 &#x3D; 时间 + 状态</p>
-<p>时间分</p>
-<ol>
-<li>过去</li>
-<li>现在</li>
-<li>将来 (未发生的，表示某种意愿)<br>will 在对将来表述的时候，是”主观上”最确认的，翻译成”愿意”但”客观上”有概率不实现。比 will 主观意愿弱一点的是 may，翻译为可能。但不经常说 I may。因为是句废话，自己愿不愿意，没点逼数嘛。so 只能说 he may，因为对于别人的意愿判断可以是拿捏不准的</li>
-<li>过去将来</li>
-</ol>
-<p>状态分：</p>
-<ol>
-<li>一般： 不强调动作</li>
-<li>进行： 强调动作</li>
-<li>完成： 强调影响</li>
-<li>完成进行：既强调动作，又强调影响</li>
-</ol>
-<h3 id="例句"><a href="#例句" class="headerlink" title="例句"></a>例句</h3><ol>
-<li><p>过去一般：发生在过去，不强调动作<br>I watched TV just now.<br>我刚刚在看电视<br>did + do&#x3D; did</p>
-</li>
-<li><p>现在一般：发生在现在，不强调动作：<br>I often watch TV.<br>我经常看电视<br>do + do&#x3D; do</p>
-</li>
-<li><p>将来一般： 未发生的，不强调动作,强调意愿<br>I will watch TV tonight.<br>我今晚会看电视<br>will + do &#x3D; will do</p>
-</li>
-<li><p>过去将来一般：主体动作发生在过去，客体动作是将来很可能要发生的动作<br>Yesterday he told me he would go to the zoo next Sunday.<br>他昨天告诉我他下周天会去动物园.<br>would + do&#x3D; would do</p>
-</li>
-<li><p>过去进行：发生在过去，正在进行的动作<br>I was watching TV when you came in.<br>你进来时，我正在看电视<br>did+be doing&#x3D;was&#x2F;were doing（was watching）</p>
-</li>
-<li><p>现在进行：发生在现在，正在进行的动作<br>I am watching TV.<br>我正在看电视<br>do+be doing&#x3D;be doing（am watching 正在看）</p>
-</li>
-<li><p>将来进行: 未发生的，强调动作,强调意愿<br>We will be flying at 30,000 feet in five minutes.<br>我们将在 5 分钟内翱翔在 30000 英尺的高空<br>will+ be doing</p>
-</li>
-<li><p>过去将来进行时：发生在过去，强调当时预计做什么，或者什么很有可能发生<br>He said we would be having a meeting at this time next Sunday.<br>他说下星期天这个时候我们要开会。<br>过去将来进行时：would + be doing&#x3D; would be doing</p>
-</li>
-<li><p>过去完成时：过去的过去发生的动作对过去赵成的影响，强调动作的影响<br>He had lived here for 20 years by the end of last year.<br>截止到去年末，他已经在这里居住了 20 年了<br>did + have done&#x3D;had done</p>
-</li>
-<li><p>现在完成时：截止到现在已经完成了的动作对现在造成的影响. 强调动作的影响<br>I have finished my homework.<br>我完成了我的作业.<br>do + have done&#x3D; have done</p>
-</li>
-<li><p>将来完成时：要完成什么事情，强调意愿<br>I will have finished the book by the end of this year.<br>我将在今年年底前完成这本书。<br>will+have done&#x3D;will have done</p>
-</li>
-<li><p>过去将来完成时: 发生在过去，当时他想要完成什么事情<br>He told us that he would have finished the book by the end of this year.<br>他告诉我们他将在今年年底完成这本书。<br>would have done</p>
-</li>
-<li><p>过去完成进行时：强调动作，也强调结果<br>I had been teaching here before you came to the city.<br>在你来这个城市之前我就在这教学了<br>had been doing</p>
-</li>
-<li><p>现在完成进行时：（既强调动作又强调影响）截止到现在已经完成且未来还会进行的动作<br>The students have been being taught by me for 10 years.<br>我教这些学生已经十年了。<br>do+have been doing&#x3D;have been doing</p>
-</li>
-<li><p>将来完成进行时：强调很可能发生的，也强调动作和影响<br>By next summer，he will have been teaching here for 30 years.<br>到明年夏天，他将在这里教书 30 年。<br>will+have been doing&#x3D;will have been doing</p>
-</li>
-<li><p>过去将来完成进行时：发生在过去的，强调当时又完成什么的意愿，也强调动作和影响<br>He told us he would been teaching here for 30 years by next summer.<br>他告诉我们到明年夏天他将在这里教书 30 年。<br>would+have been doing&#x3D;would have been doing</p>
-</li>
-</ol>
+<p>这时，在尝试登录远程服务器就不再需要密码了</p>
 
     </div>
 
@@ -433,9 +329,9 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-        <div class="popular-posts-date">2023-02-02</div>
-      <div class="popular-posts-title"><a href="2023/02/02/vscode 配置远程登录免密码/" rel="bookmark">VSCode 配置远程登录免密码.md</a></div>
-        <div class="popular-posts-excerpt"><p><p>最近，发现 vscode 的远程开发能力很棒，这里记录一个免密登录的方法，避免每次链接远程服务器都需要使用密码</p></div>
+        <div class="popular-posts-date">2023-02-07</div>
+      <div class="popular-posts-title"><a href="2023/02/07/英语学习/" rel="bookmark">英语学习</a></div>
+        <div class="popular-posts-excerpt"><p><p>记录英语学习的一些知识点</p></div>
     </li>
   </ul>
 
@@ -468,7 +364,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2023/02/02/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/" title="英语学习">https://lyunki.github.io/2023/02/02/英语学习/</a>
+      <a href="https://lyunki.github.io/2023/02/07/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/" title="VSCode 配置远程登录免密码.md">https://lyunki.github.io/2023/02/07/vscode 配置远程登录免密码/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -481,10 +377,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="安装和初始化 PostgreSQL  数据库">
+                  <i class="fa fa-chevron-left"></i> 安装和初始化 PostgreSQL  数据库
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/02/02/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20Redis/" rel="next" title="服务器安装和初始化 Redis">
-                  服务器安装和初始化 Redis <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/07/powershell-study/" rel="next" title="powershell 学习">
+                  powershell 学习 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -497,7 +396,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="0815dda196d9934e726fbb8826b54b53"></div>
+    <div class="comments" id="SOHUCS" sid="199f529387336af8cb58b451d1d8e6f4"></div>
 </div>
   </main>
 
@@ -519,14 +418,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

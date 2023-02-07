@@ -23,28 +23,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API">
+    <meta name="description" content="近期，想在自己的服务器上进行生产环境的搭建，数据库选用的是 PostgreSQL  这里记录一下数据库的搭建流程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端性能量化">
-<meta property="og:url" content="https://lyunki.github.io/2023/02/02/frontend-performance/index.html">
+<meta property="og:title" content="安装和初始化 PostgreSQL  数据库">
+<meta property="og:url" content="https://lyunki.github.io/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
-<meta property="og:description" content="工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API">
+<meta property="og:description" content="近期，想在自己的服务器上进行生产环境的搭建，数据库选用的是 PostgreSQL  这里记录一下数据库的搭建流程">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-02T06:27:59.759Z">
-<meta property="article:modified_time" content="2023-02-02T06:27:59.759Z">
+<meta property="og:image" content="https://lyunki.github.io/images/posts/2023-01-27-10-11-33.png">
+<meta property="article:published_time" content="2023-02-07T03:08:09.720Z">
+<meta property="article:modified_time" content="2023-02-07T03:08:09.720Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lyunki.github.io/images/posts/2023-01-27-10-11-33.png">
 
 
-<link rel="canonical" href="https://lyunki.github.io/2023/02/02/frontend-performance/">
+<link rel="canonical" href="https://lyunki.github.io/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2023/02/02/frontend-performance/","path":"2023/02/02/frontend-performance/","title":"前端性能量化"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/","path":"2023/02/07/安装和初始化 PostgreSQL  数据库/","title":"安装和初始化 PostgreSQL  数据库"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>前端性能量化 | Quoth the Raven</title>
+<title>安装和初始化 PostgreSQL  数据库 | Quoth the Raven</title>
   
 
 
@@ -147,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#performance-memory"><span class="nav-number">1.</span> <span class="nav-text">performance.memory</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PostgreSQL-%E4%B8%8B%E8%BD%BD"><span class="nav-number">1.</span> <span class="nav-text">PostgreSQL 下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PostgreSQL-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">PostgreSQL 初始化配置</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,7 +226,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/02/02/frontend-performance/">
+    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -237,12 +239,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="前端性能量化 | Quoth the Raven">
+      <meta itemprop="name" content="安装和初始化 PostgreSQL  数据库 | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          前端性能量化
+          安装和初始化 PostgreSQL  数据库
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +255,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-02-02 06:27:59" itemprop="dateCreated datePublished" datetime="2023-02-02T06:27:59+00:00">2023-02-02</time>
+      <time title="创建时间：2023-02-07 03:08:09" itemprop="dateCreated datePublished" datetime="2023-02-07T03:08:09+00:00">2023-02-07</time>
     </span>
 
   
@@ -272,8 +274,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="前端性能量化" href="/2023/02/02/frontend-performance/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::93ffbc9aef2dd482b12284c0155d408c" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="安装和初始化 PostgreSQL  数据库" href="/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::5e6f43a45a5a18178bd627521546d36e" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -284,7 +286,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>339</span>
+      <span>574</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -302,12 +304,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API <span id="more"></span></p>
-<h2 id="performance-memory"><a href="#performance-memory" class="headerlink" title="performance.memory"></a>performance.memory</h2><p>能够通过 performance.memory 获得以下数据 （都以字节计算</p>
+        <p>近期，想在自己的服务器上进行生产环境的搭建，数据库选用的是 PostgreSQL  这里记录一下数据库的搭建流程 <span id="more"></span></p>
+<h2 id="PostgreSQL-下载"><a href="#PostgreSQL-下载" class="headerlink" title="PostgreSQL 下载"></a>PostgreSQL 下载</h2><p>参考<a target="_blank" rel="noopener" href="https://www.postgresql.org/download/">官网</a>, 在服务器上执行 uname -a ，能够看到是 Debian 的系统，他是自带 postgresql 的<br><img src="/images/posts/2023-01-27-10-11-33.png"><br>因此执行 <code>sudo apt-get install postgresql</code> 即可</p>
+<h2 id="PostgreSQL-初始化配置"><a href="#PostgreSQL-初始化配置" class="headerlink" title="PostgreSQL 初始化配置"></a>PostgreSQL 初始化配置</h2><p>初次安装后，会默认生成一个名为 postgres 的数据库和数据库用户，并且会同时生成一个名为 postgres 的 linux 系统用户。由于默认的 postgres 数据库用户没有密码，我们需要先为其配置对应的密码，</p>
 <ol>
-<li><code>usedJSHeapSize</code> : 当前 JS 堆活跃段（segment）的体积 The currently active segment of JS heap, in bytes.</li>
-<li><code>totalJSHeapSize</code> : 已分配的堆体积 The total allocated heap size, in bytes.</li>
-<li><code>jsHeapSizeLimit</code> : 上下文内可用堆的最大体积 The maximum size of the heap, in bytes, that is available to the context</li>
+<li>首先切换到 postgres 用户 <code>sudo su - postgres</code></li>
+<li>登录 postgres 控制台 <code>psql</code></li>
+<li>执行 <code>\password postgres</code> 命令设置密码</li>
+</ol>
+<p>现在，我需要初始化一个名为 xxx 的数据库和用户,紧接着刚刚的步骤</p>
+<ol>
+<li>创建数据库用户 <code> CREATE USER xxx WITH PASSWORD &#39;xxx&#39;</code>;</li>
+<li>创建数据库 <code>CREATE DATABASE xxx OWNER xxx;</code></li>
+<li>对数据库 xxx 的所有权限授予 xxx <code>GRANT ALL PRIVILEGES ON DATABASE xxx to xxx;</code></li>
+<li>\q 退出 postgres 控制台</li>
+<li>使用新建的数据库用户 xxx 来登录 postgres 控制台 <code>psql -U xxx -d xxx -h 127.0.0.1 -p 5432</code></li>
 </ol>
 
     </div>
@@ -346,7 +357,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lyunki.github.io/2023/02/02/frontend-performance/" title="前端性能量化">https://lyunki.github.io/2023/02/02/frontend-performance/</a>
+      <a href="https://lyunki.github.io/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/" title="安装和初始化 PostgreSQL  数据库">https://lyunki.github.io/2023/02/07/安装和初始化 PostgreSQL  数据库/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -359,13 +370,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/02/02/git-tips/" rel="prev" title="git 小知识记录">
-                  <i class="fa fa-chevron-left"></i> git 小知识记录
+                <a href="/2023/02/07/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20Redis/" rel="prev" title="服务器安装和初始化 Redis">
+                  <i class="fa fa-chevron-left"></i> 服务器安装和初始化 Redis
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/02/02/deploy-hexo/" rel="next" title="通过Github Actions部署你的Hexo博客">
-                  通过Github Actions部署你的Hexo博客 <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/07/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/" rel="next" title="VSCode 配置远程登录免密码.md">
+                  VSCode 配置远程登录免密码.md <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -378,7 +389,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="93ffbc9aef2dd482b12284c0155d408c"></div>
+    <div class="comments" id="SOHUCS" sid="5e6f43a45a5a18178bd627521546d36e"></div>
 </div>
   </main>
 
@@ -400,14 +411,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
