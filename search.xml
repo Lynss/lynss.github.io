@@ -246,7 +246,7 @@
 <h2 id="用-curl-下载安装-acme-sh，并开启自动更新"><a href="#用-curl-下载安装-acme-sh，并开启自动更新" class="headerlink" title="用 curl 下载安装 acme.sh，并开启自动更新"></a>用 curl 下载安装 acme.sh，并开启自动更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh -s email=xxx@gmail.com</span><br></pre></td></tr></table></figure>
 
 <h2 id="指定-acme-sh-版本"><a href="#指定-acme-sh-版本" class="headerlink" title="指定 acme.sh 版本"></a>指定 acme.sh 版本</h2><p>遇到了一个 3.0.7 版本的坑，需要指定 acme.sh 版本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --upgrade --version x.x.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp -r ~/.acme.sh ~/.acme.sh.backup</span><br><span class="line">wget https://github.com/acmesh-official/acme.sh/archive/refs/tags/v3.0.6.tar.gz</span><br><span class="line">tar -zxvf v3.0.6.tar.gz</span><br><span class="line">cd acme.sh-3.0.6</span><br><span class="line">./acme.sh --install</span><br></pre></td></tr></table></figure>
 
 <h2 id="自动更新和关闭自动更新"><a href="#自动更新和关闭自动更新" class="headerlink" title="自动更新和关闭自动更新"></a>自动更新和关闭自动更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --upgrade --auto-upgrade</span><br><span class="line">~/.acme.sh/acme.sh --upgrade --auto-upgrade 0</span><br></pre></td></tr></table></figure>
 
