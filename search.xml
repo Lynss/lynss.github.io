@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Docker学习</title>
-    <url>/2023/06/04/Docker%E5%AD%A6%E4%B9%A0/</url>
+    <url>/2023/08/24/Docker%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<p>记录一些常用的 Docker 命令和知识 <span id="more"></span></p>
 <p>要进入 Docker 中的 Nginx 容器，您可以在终端中使用 docker exec 命令。以下是如何操作的步骤：</p>
 <ol>
@@ -34,7 +34,7 @@
   </entry>
   <entry>
     <title>ES装饰器指南</title>
-    <url>/2023/06/04/ES%E8%A3%85%E9%A5%B0%E5%99%A8%E6%8C%87%E5%8D%97/</url>
+    <url>/2023/08/24/ES%E8%A3%85%E9%A5%B0%E5%99%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>网上看到的一篇比较好的装饰器指南，留存备份一下 <span id="more"></span></p>
 <blockquote><p>适用于 <strong>stage3</strong> 后的 ES 装饰器</p>
 <footer><strong>装饰器指南:</strong><cite><a href="https://2ality.com/2022/10/javascript-decorators.html#class-auto-accessor-decorators/">2ality.com/2022/10/javascript-decorators.html#class-auto-accessor-decorators</a></cite></footer></blockquote>
@@ -42,7 +42,7 @@
   </entry>
   <entry>
     <title>Cron 表达式学习</title>
-    <url>/2023/06/04/cron-study/</url>
+    <url>/2023/08/24/cron-study/</url>
     <content><![CDATA[<p>之前在做一些定时处理的时候经常接触到了Cron表达式，但每次都是泛泛的了解了下，最近又有了定时任务相关的一些需求和想法，因此这里尝试系统的学习和了解一下 <span id="more"></span></p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><table>
 <thead>
@@ -116,7 +116,7 @@
   </entry>
   <entry>
     <title>通过Github Actions部署你的Hexo博客</title>
-    <url>/2023/06/04/deploy-hexo/</url>
+    <url>/2023/08/24/deploy-hexo/</url>
     <content><![CDATA[<p>最近被生活中的琐事所困扰，实在有些迷茫，因此又双叒叕的骚动了想要记录点事情的冲动，思来想去，出于对nodejs相关技术栈的亲切感，选了hexo。<span id="more"></span></p>
 <h2 id="使用hexo-d进行部署"><a href="#使用hexo-d进行部署" class="headerlink" title="使用hexo d进行部署"></a>使用hexo d进行部署</h2><ol>
 <li><p>增加 <code>hexo-deployer-git</code> 依赖，在_config.yaml文件里配置 </p>
@@ -139,7 +139,7 @@
   </entry>
   <entry>
     <title>前端性能量化</title>
-    <url>/2023/06/04/frontend-performance/</url>
+    <url>/2023/08/24/frontend-performance/</url>
     <content><![CDATA[<p>工作过程中，经常需要表现下自己的工作成果，但是所谓空口无凭，数据才是最直观的，刚好，贴心的浏览器提供了 performance API <span id="more"></span></p>
 <h2 id="performance-memory"><a href="#performance-memory" class="headerlink" title="performance.memory"></a>performance.memory</h2><p>能够通过 performance.memory 获得以下数据 （都以字节计算</p>
 <ol>
@@ -151,7 +151,7 @@
   </entry>
   <entry>
     <title>git 小知识记录</title>
-    <url>/2023/06/04/git-tips/</url>
+    <url>/2023/08/24/git-tips/</url>
     <content><![CDATA[<p>最近用 git 时遇到几次修改文件名大小写不生效的问题，很是恶心，突发奇想，用 blog 记录一下那些碰到的问题<span id="more"></span></p>
 <h2 id="在-git-中修改文件名大小写"><a href="#在-git-中修改文件名大小写" class="headerlink" title="在 git 中修改文件名大小写"></a>在 git 中修改文件名大小写</h2><ol>
 <li>如果是修改文件名，可以用 git mv</li>
@@ -171,7 +171,7 @@
   </entry>
   <entry>
     <title>Nginx学习</title>
-    <url>/2023/06/04/nginx%E5%AD%A6%E4%B9%A0/</url>
+    <url>/2023/08/24/nginx%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<p>记录一些常用的 Nginx 知识 <span id="more"></span></p>
 <h2 id="Nginx-不同网站如何维护"><a href="#Nginx-不同网站如何维护" class="headerlink" title="Nginx 不同网站如何维护"></a>Nginx 不同网站如何维护</h2><p>在 Nginx 中，通常可以将不同网站的配置和静态文件存放在不同的目录下，这样可以使得 Nginx 配置更加清晰和易于维护。以下是一些常见的最佳实践：</p>
 <ol>
@@ -193,7 +193,7 @@
   </entry>
   <entry>
     <title>powershell 学习</title>
-    <url>/2023/06/04/powershell-study/</url>
+    <url>/2023/08/24/powershell-study/</url>
     <content><![CDATA[<p>本来作为一名前端人员，用 nodejs 实现脚本的想法是自然的，然而实际使用过程中，发现还是怀念在 oh my zh 里面畅快使用命令的日子，但是工作的开发环境是 Windows ，所幸 powershell 脚本其实也挺好用，于是也记录一些对于 powershell 的学习 <span id="more"></span></p>
 <h2 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h2><p>首先在 powershell 执行 <code>Code $PROFILE</code> （Code 会全局的打开 VSCode 编辑器，可能需要配置环境变量，可自行选择文本编辑器）,然后保存文件，这样能够迅速的创建一个脚本，会在每次启动 powershell 时执行。</p>
 <h2 id="open-命令"><a href="#open-命令" class="headerlink" title="open 命令"></a>open 命令</h2><p>open . 在 omz 中能迅速的打开当前文件夹，这对我来说算是非常常用的一个命令，而在 powershell 中对应的命令是 ii, 因此可以实现一个 open 方法（对于有 Typescript 经验的开发人员来说，这实在太过熟悉。。。以至于我甚至没有阅读过任何 ps 脚本文档，只是仿照着其他脚本就实现了一个简单的 open 命令</p>
@@ -218,7 +218,7 @@
   </entry>
   <entry>
     <title>VSCode 配置远程登录免密码.md</title>
-    <url>/2023/06/04/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/</url>
+    <url>/2023/08/24/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/</url>
     <content><![CDATA[<p>最近，发现 vscode 的远程开发能力很棒，这里记录一个免密登录的方法，避免每次链接远程服务器都需要使用密码 <span id="more"></span></p>
 <h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ol>
 <li>本地安装好了 ssh 客户端</li>
@@ -235,8 +235,36 @@
 ]]></content>
   </entry>
   <entry>
+    <title>在docker容器中使用acme.sh生成证书.md</title>
+    <url>/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/</url>
+    <content><![CDATA[<p>记录用 acme 工具在 docker 容器中使用 nginx 模式生成签名证书 <span id="more"></span></p>
+<h2 id="进入-nginx-docker-容器"><a href="#进入-nginx-docker-容器" class="headerlink" title="进入 nginx docker 容器"></a>进入 nginx docker 容器</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker exec -it 1a89718e5960 /bin/sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-crontab"><a href="#安装-crontab" class="headerlink" title="安装 crontab"></a>安装 crontab</h2><p>容器通常没有 cron，需要提前安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install cron</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可选，有时需要进行编辑</span></span><br><span class="line">apt-get install vim-tiny</span><br></pre></td></tr></table></figure>
+
+<h2 id="用-curl-下载安装-acme-sh，并开启自动更新"><a href="#用-curl-下载安装-acme-sh，并开启自动更新" class="headerlink" title="用 curl 下载安装 acme.sh，并开启自动更新"></a>用 curl 下载安装 acme.sh，并开启自动更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh -s email=xxx@gmail.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="指定-acme-sh-版本"><a href="#指定-acme-sh-版本" class="headerlink" title="指定 acme.sh 版本"></a>指定 acme.sh 版本</h2><p>遇到了一个 3.0.7 版本的坑，需要指定 acme.sh 版本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --upgrade --version x.x.x</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动更新和关闭自动更新"><a href="#自动更新和关闭自动更新" class="headerlink" title="自动更新和关闭自动更新"></a>自动更新和关闭自动更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --upgrade --auto-upgrade</span><br><span class="line">~/.acme.sh/acme.sh --upgrade --auto-upgrade 0</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改-ca"><a href="#修改-ca" class="headerlink" title="修改 ca"></a>修改 ca</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --set-default-ca --server letsencrypt</span><br></pre></td></tr></table></figure>
+
+<h2 id="还原默认的-ca"><a href="#还原默认的-ca" class="headerlink" title="还原默认的 ca"></a>还原默认的 ca</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --set-default-ca --server zerossl</span><br></pre></td></tr></table></figure>
+
+<h2 id="签发证书"><a href="#签发证书" class="headerlink" title="签发证书"></a>签发证书</h2><p>此时还没有证书，需要先移除 nginx 中的 ssl 配置</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export domain_name=cx.cloud-xiao.online &amp;&amp; ~/.acme.sh/acme.sh --issue --nginx -d $domain_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装证书-要确保路径正确"><a href="#安装证书-要确保路径正确" class="headerlink" title="安装证书 (要确保路径正确)"></a>安装证书 (要确保路径正确)</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export domain_name=&quot;cx.cloud-xiao.online&quot; certs_dir=/etc/nginx/certs &amp;&amp;</span><br><span class="line">mkdir -p $certs_dir/$domain_name &amp;&amp;</span><br><span class="line">~/.acme.sh/acme.sh --install-cert -d $domain_name \</span><br><span class="line">--key-file       $certs_dir/$domain_name/cert.key \</span><br><span class="line">--fullchain-file $certs_dir/$domain_name/fullchain.cer \</span><br><span class="line">--reloadcmd &quot;service nginx force-reload&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看定时任务"><a href="#查看定时任务" class="headerlink" title="查看定时任务"></a>查看定时任务</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>安装和初始化 PostgreSQL  数据库</title>
-    <url>/2023/06/04/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <url>/2023/08/24/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<p>近期，想在自己的服务器上进行生产环境的搭建，数据库选用的是 PostgreSQL  这里记录一下数据库的搭建流程 <span id="more"></span></p>
 <h2 id="PostgreSQL-下载"><a href="#PostgreSQL-下载" class="headerlink" title="PostgreSQL 下载"></a>PostgreSQL 下载</h2><p>参考<a href="https://www.postgresql.org/download/">官网</a>, 在服务器上执行 uname -a ，能够看到是 Debian 的系统，他是自带 postgresql 的<br><img src="/images/posts/2023-01-27-10-11-33.png"><br>因此执行 <code>sudo apt-get install postgresql</code> 即可</p>
 <h2 id="PostgreSQL-初始化配置"><a href="#PostgreSQL-初始化配置" class="headerlink" title="PostgreSQL 初始化配置"></a>PostgreSQL 初始化配置</h2><p>初次安装后，会默认生成一个名为 postgres 的数据库和数据库用户，并且会同时生成一个名为 postgres 的 linux 系统用户。由于默认的 postgres 数据库用户没有密码，我们需要先为其配置对应的密码，</p>
@@ -257,7 +285,7 @@
   </entry>
   <entry>
     <title>服务器安装和初始化 Redis</title>
-    <url>/2023/06/04/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20Redis/</url>
+    <url>/2023/08/24/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20Redis/</url>
     <content><![CDATA[<p>记录一下 Redis 的安装和初始化流程 <span id="more"></span></p>
 <h2 id="Redis-下载"><a href="#Redis-下载" class="headerlink" title="Redis 下载"></a>Redis 下载</h2><p>参考<a href="https://redis.io/docs/getting-started/installation/install-redis-on-linux/">官网</a></p>
 <ol>
@@ -276,7 +304,7 @@
   </entry>
   <entry>
     <title>英语学习</title>
-    <url>/2023/06/04/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/</url>
+    <url>/2023/08/24/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<p>记录英语学习的一些知识点 <span id="more"></span></p>
 <h2 id="英语的词性（词类）-（word-classes）（parts-of-speech"><a href="#英语的词性（词类）-（word-classes）（parts-of-speech" class="headerlink" title="英语的词性（词类） （word classes）（parts of speech)"></a>英语的词性（词类） （word classes）（parts of speech)</h2><p>目前网上存在两种说法，其中中文搜索的结果说英语有 10 种词类，但是英文搜索的结果是 9 种（没有归类数词）</p>
 <p>其中，有四种主要的词类</p>

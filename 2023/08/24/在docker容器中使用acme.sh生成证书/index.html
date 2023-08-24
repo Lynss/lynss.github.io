@@ -23,24 +23,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyunki.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Quoth the Raven">
-<meta property="og:url" content="https://lyunki.github.io/page/2/index.html">
+    <meta name="description" content="记录用 acme 工具在 docker 容器中使用 nginx 模式生成签名证书">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在docker容器中使用acme.sh生成证书.md">
+<meta property="og:url" content="https://lyunki.github.io/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="Quoth the Raven">
+<meta property="og:description" content="记录用 acme 工具在 docker 容器中使用 nginx 模式生成签名证书">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-24T03:32:27.169Z">
+<meta property="article:modified_time" content="2023-08-24T03:32:27.169Z">
 <meta property="article:author" content="LyunKi">
 <meta property="article:tag" content="cron,hexo,github-actions">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lyunki.github.io/page/2/">
+<link rel="canonical" href="https://lyunki.github.io/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lyunki.github.io/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/","path":"2023/08/24/在docker容器中使用acme.sh生成证书/","title":"在docker容器中使用acme.sh生成证书.md"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Quoth the Raven</title>
+<title>在docker容器中使用acme.sh生成证书.md | Quoth the Raven</title>
   
 
 
@@ -71,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Quoth the Raven</h1>
+      <p class="site-title">Quoth the Raven</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -130,7 +134,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -143,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5-nginx-docker-%E5%AE%B9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">进入 nginx docker 容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-crontab"><span class="nav-number">2.</span> <span class="nav-text">安装 crontab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-curl-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-acme-sh%EF%BC%8C%E5%B9%B6%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">用 curl 下载安装 acme.sh，并开启自动更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A-acme-sh-%E7%89%88%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">指定 acme.sh 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%92%8C%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="nav-number">5.</span> <span class="nav-text">自动更新和关闭自动更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-ca"><span class="nav-number">6.</span> <span class="nav-text">修改 ca</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E5%8E%9F%E9%BB%98%E8%AE%A4%E7%9A%84-ca"><span class="nav-number">7.</span> <span class="nav-text">还原默认的 ca</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%BE%E5%8F%91%E8%AF%81%E4%B9%A6"><span class="nav-number">8.</span> <span class="nav-text">签发证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%AF%81%E4%B9%A6-%E8%A6%81%E7%A1%AE%E4%BF%9D%E8%B7%AF%E5%BE%84%E6%AD%A3%E7%A1%AE"><span class="nav-number">9.</span> <span class="nav-text">安装证书 (要确保路径正确)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">10.</span> <span class="nav-text">查看定时任务</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,123 +213,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/08/24/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="LyunKi">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quoth the Raven">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Quoth the Raven">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/24/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/" class="post-title-link" itemprop="url">VSCode 配置远程登录免密码.md</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-24 03:32:27" itemprop="dateCreated datePublished" datetime="2023-08-24T03:32:27+00:00">2023-08-24</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="VSCode 配置远程登录免密码.md" href="/2023/08/24/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::8e461dffb76d444cce3768980197e327" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>307</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>最近，发现 vscode 的远程开发能力很棒，这里记录一个免密登录的方法，避免每次链接远程服务器都需要使用密码
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/24/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -338,13 +237,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Quoth the Raven">
+      <meta itemprop="name" content="在docker容器中使用acme.sh生成证书.md | Quoth the Raven">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/" class="post-title-link" itemprop="url">在docker容器中使用acme.sh生成证书.md</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          在docker容器中使用acme.sh生成证书.md
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -358,6 +257,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
   
   <span class="post-meta-item">
     
@@ -396,27 +302,102 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>记录用 acme 工具在 docker 容器中使用 nginx 模式生成签名证书
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <p>记录用 acme 工具在 docker 容器中使用 nginx 模式生成签名证书 <span id="more"></span></p>
+<h2 id="进入-nginx-docker-容器"><a href="#进入-nginx-docker-容器" class="headerlink" title="进入 nginx docker 容器"></a>进入 nginx docker 容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 1a89718e5960 /bin/sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-crontab"><a href="#安装-crontab" class="headerlink" title="安装 crontab"></a>安装 crontab</h2><p>容器通常没有 cron，需要提前安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install cron</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可选，有时需要进行编辑</span></span><br><span class="line">apt-get install vim-tiny</span><br></pre></td></tr></table></figure>
+
+<h2 id="用-curl-下载安装-acme-sh，并开启自动更新"><a href="#用-curl-下载安装-acme-sh，并开启自动更新" class="headerlink" title="用 curl 下载安装 acme.sh，并开启自动更新"></a>用 curl 下载安装 acme.sh，并开启自动更新</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://get.acme.sh | sh -s email=xxx@gmail.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="指定-acme-sh-版本"><a href="#指定-acme-sh-版本" class="headerlink" title="指定 acme.sh 版本"></a>指定 acme.sh 版本</h2><p>遇到了一个 3.0.7 版本的坑，需要指定 acme.sh 版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --upgrade --version x.x.x</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动更新和关闭自动更新"><a href="#自动更新和关闭自动更新" class="headerlink" title="自动更新和关闭自动更新"></a>自动更新和关闭自动更新</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --upgrade --auto-upgrade</span><br><span class="line">~/.acme.sh/acme.sh --upgrade --auto-upgrade 0</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改-ca"><a href="#修改-ca" class="headerlink" title="修改 ca"></a>修改 ca</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --set-default-ca --server letsencrypt</span><br></pre></td></tr></table></figure>
+
+<h2 id="还原默认的-ca"><a href="#还原默认的-ca" class="headerlink" title="还原默认的 ca"></a>还原默认的 ca</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --set-default-ca --server zerossl</span><br></pre></td></tr></table></figure>
+
+<h2 id="签发证书"><a href="#签发证书" class="headerlink" title="签发证书"></a>签发证书</h2><p>此时还没有证书，需要先移除 nginx 中的 ssl 配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export domain_name=cx.cloud-xiao.online &amp;&amp; ~/.acme.sh/acme.sh --issue --nginx -d $domain_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装证书-要确保路径正确"><a href="#安装证书-要确保路径正确" class="headerlink" title="安装证书 (要确保路径正确)"></a>安装证书 (要确保路径正确)</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export domain_name=&quot;cx.cloud-xiao.online&quot; certs_dir=/etc/nginx/certs &amp;&amp;</span><br><span class="line">mkdir -p $certs_dir/$domain_name &amp;&amp;</span><br><span class="line">~/.acme.sh/acme.sh --install-cert -d $domain_name \</span><br><span class="line">--key-file       $certs_dir/$domain_name/cert.key \</span><br><span class="line">--fullchain-file $certs_dir/$domain_name/fullchain.cer \</span><br><span class="line">--reloadcmd &quot;service nginx force-reload&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看定时任务"><a href="#查看定时任务" class="headerlink" title="查看定时任务"></a>查看定时任务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
     
     
       
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2023-08-24</div>
+      <div class="popular-posts-title"><a href="2023/08/24/Docker学习/" rel="bookmark">Docker学习</a></div>
+        <div class="popular-posts-excerpt"><p><p>记录一些常用的 Docker 命令和知识</p></div>
+    </li>
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2023-08-24</div>
+      <div class="popular-posts-title"><a href="2023/08/24/nginx学习/" rel="bookmark">Nginx学习</a></div>
+        <div class="popular-posts-excerpt"><p><p>记录一些常用的 Nginx 知识</p></div>
+    </li>
+  </ul>
 
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="LyunKi 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="LyunKi 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>LyunKi
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lyunki.github.io/2023/08/24/%E5%9C%A8docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8acme.sh%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6/" title="在docker容器中使用acme.sh生成证书.md">https://lyunki.github.io/2023/08/24/在docker容器中使用acme.sh生成证书/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/24/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="安装和初始化 PostgreSQL  数据库">
+                  <i class="fa fa-chevron-left"></i> 安装和初始化 PostgreSQL  数据库
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/08/24/vscode%20%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86%E7%A0%81/" rel="next" title="VSCode 配置远程登录免密码.md">
+                  VSCode 配置远程登录免密码.md <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -424,117 +405,9 @@
 
 
 
-    
 
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lyunki.github.io/2023/08/24/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="LyunKi">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quoth the Raven">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Quoth the Raven">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/24/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">安装和初始化 PostgreSQL  数据库</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-24 03:32:27" itemprop="dateCreated datePublished" datetime="2023-08-24T03:32:27+00:00">2023-08-24</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="安装和初始化 PostgreSQL  数据库" href="/2023/08/24/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::f31693f5b36a43ca2af2017ce9e5d7cd" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>574</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>近期，想在自己的服务器上进行生产环境的搭建，数据库选用的是 PostgreSQL  这里记录一下数据库的搭建流程
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/24/%E5%AE%89%E8%A3%85%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%20PostgreSQL%20%20%E6%95%B0%E6%8D%AE%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="comments" id="SOHUCS" sid="9f5461083b67e01c620f4449f4bc506e"></div>
 </div>
   </main>
 
